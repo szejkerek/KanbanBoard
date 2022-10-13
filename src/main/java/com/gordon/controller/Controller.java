@@ -5,7 +5,7 @@ import com.gordon.view.View;
 
 /**
  *
- * @author Bartłomiej Gordon
+ * @author Bartłomiej Gordon - bartgor628@student.polsl.pl
  */
 public class Controller {
     private View view = null;

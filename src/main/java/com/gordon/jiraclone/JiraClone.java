@@ -2,7 +2,7 @@ package com.gordon.jiraclone;
 import com.gordon.controller.Controller;
 /**
  *
- * @author Bartłomiej Gordon
+ * @author Bartłomiej Gordon - bartgor628@student.polsl.pl
  * @version 1.0
  */
 public class JiraClone {
