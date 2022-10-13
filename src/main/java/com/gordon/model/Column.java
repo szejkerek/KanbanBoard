@@ -1,4 +1,4 @@
-package com.mycompany.model;
+package com.gordon.model;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,9 +1,9 @@
-package com.mycompany.model;
+package com.gordon.model;
 
 /**
  *
  * @author Bartłomiej Gordon
  */
-public class User {
+public class Company {
     
 }

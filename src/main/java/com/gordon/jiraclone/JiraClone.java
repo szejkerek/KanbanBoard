@@ -1,5 +1,5 @@
-package com.mycompany.jiraclone;
-import com.mycompany.controller.Controller;
+package com.gordon.jiraclone;
+import com.gordon.controller.Controller;
 /**
  *
  * @author Bartłomiej Gordon

@@ -1,7 +1,7 @@
-package com.mycompany.controller;
+package com.gordon.controller;
 
-import com.mycompany.model.*;
-import com.mycompany.view.View;
+import com.gordon.model.Board;
+import com.gordon.view.View;
 
 /**
  *

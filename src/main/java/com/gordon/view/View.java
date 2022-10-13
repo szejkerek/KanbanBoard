@@ -1,8 +1,8 @@
-package com.mycompany.view;
+package com.gordon.view;
 
-import com.mycompany.model.Board;
-import com.mycompany.model.Column;
-import com.mycompany.model.Task;
+import com.gordon.model.Board;
+import com.gordon.model.Column;
+import com.gordon.model.Task;
 import java.util.List;
 import java.util.Scanner;
 
