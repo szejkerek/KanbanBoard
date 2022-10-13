@@ -1,0 +1,8 @@
+com\mycompany\model\User.class
+com\mycompany\model\Task.class
+com\mycompany\controller\Controller.class
+com\mycompany\model\Column.class
+com\mycompany\model\Board.class
+com\mycompany\jiraclone\JiraClone.class
+com\mycompany\view\View.class
+com\mycompany\model\Company.class
