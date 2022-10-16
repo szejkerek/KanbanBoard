@@ -10,10 +10,10 @@ public class JiraClone {
 
     public static void main(String[] args) {
         
-        CommandLineArguments arg = new CommandLineArguments();  
-        arg.processArguments(args);
+        CommandLineArguments commandLineArgs = new CommandLineArguments();  
+        commandLineArgs.processArguments(args);
         
-        Controller controller = null;          
+        Controller controller = new Controller(commandLineArgs);          
     }
            
 }
