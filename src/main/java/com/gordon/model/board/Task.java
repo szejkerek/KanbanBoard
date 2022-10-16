@@ -1,4 +1,4 @@
-package com.gordon.model;
+package com.gordon.model.board;
 
 /**
  *

@@ -1,6 +1,6 @@
 package com.gordon.controller;
 
-import com.gordon.model.Board;
+import com.gordon.model.board.Board;
 import com.gordon.view.View;
 
 /**
@@ -8,50 +8,45 @@ import com.gordon.view.View;
  * @author Bartłomiej Gordon - bartgor628@student.polsl.pl
  */
 public class Controller {
+
     private View view = null;
     private Board board = null;
     private int numberOfColumns = 0;
     private String boardName;
-    
-    
-    public Controller(){
+
+    public Controller() {
         view = new View();
         boardName = "Default board";
         board = new Board(numberOfColumns, boardName);
     }
-    
-    public Controller(int _numberOfColums){
+
+    public Controller(int _numberOfColums) {
         view = new View();
-        
+
         //Validate and set number of columns
-        if(_numberOfColums < 0){
+        if (_numberOfColums < 0) {
             numberOfColumns = 0;
-        }
-        else{
+        } else {
             numberOfColumns = _numberOfColums;
         }
-        
+
         //Validate and set board name
-        do{
-            boardName = view.getBoardName(); 
-        }
-        while(!validateBoardName(boardName));
-        
+        do {
+            boardName = view.getBoardName();
+        } while (!validateBoardName(boardName));
+
         //Create Board
-        board = new Board(numberOfColumns,boardName);
+        board = new Board(numberOfColumns, boardName);
     }
 
-    private boolean validateBoardName(String boardName){
-        if(boardName == ""){
+    private boolean validateBoardName(String boardName) {
+        if (boardName == "") {
             view.showMessage("Board name cannot be empty");
             return false;
-        }
-        else if(boardName.length() > 20)
-        {
+        } else if (boardName.length() > 20) {
             view.showMessage("Board name cannot be longer than 20 characters");
             return false;
-        }
-        else {
+        } else {
             //Board name passed all cases
             return true;
         }

@@ -1,5 +1,6 @@
-package com.gordon.model;
+package com.gordon.model.board;
 
+import com.gordon.model.board.Task;
 import java.util.ArrayList;
 import java.util.List;
 
