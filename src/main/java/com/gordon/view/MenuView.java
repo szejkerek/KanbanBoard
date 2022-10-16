@@ -6,7 +6,12 @@ package com.gordon.view;
  */
 public class MenuView {
     public void displayMainMenu(){
-        
+        System.out.println("1. Show board");
+        System.out.println("2. Add task");
+        System.out.println("3. Add column");
+        System.out.println("4. Manage column");
+        System.out.println("5. Exit");
+
     }
     
 }

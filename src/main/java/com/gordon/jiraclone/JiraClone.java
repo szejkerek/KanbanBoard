@@ -13,7 +13,8 @@ public class JiraClone {
         CommandLineArguments commandLineArgs = new CommandLineArguments();  
         commandLineArgs.processArguments(args);
         
-        Controller controller = new Controller(commandLineArgs);          
+        Controller controller = new Controller(commandLineArgs); 
+        controller.startApp();
     }
            
 }

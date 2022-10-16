@@ -12,13 +12,20 @@ public class View {
     public void showMessage(String message){
         System.out.println("Message " + message);
     }
-    public String getResponseWithMessage(String message)
+    public String getStringResponseWithMessage(String message)
     {
         Scanner scanner = new Scanner(System.in);
-        System.out.println(message);
+        System.out.print(message);
         return scanner.next();
     } 
-    
+    public int getIntResponseWithMessage(String message)
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print(message);
+        int number = Integer.parseInt(scanner.next());      
+ 
+        return number;
+    } 
     
     //Getters&Setters
     public MenuView getMenuView() {

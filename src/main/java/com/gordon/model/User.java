@@ -17,7 +17,7 @@ public class User {
 
     public void askForUserName() {
         do {
-            name = view.getResponseWithMessage("Enter your user name: ");
+            name = view.getStringResponseWithMessage("Enter your user name: ");
         } while (!validateUserName(name));
     }
 
