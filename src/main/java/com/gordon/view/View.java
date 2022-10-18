@@ -7,28 +7,42 @@ import java.util.Scanner;
  * @author Bartłomiej Gordon - bartgor628@student.polsl.pl
  */
 public class View {
+
     private MenuView menuView = new MenuView();
-  
-    public void showMessage(String message){
-        System.out.println("Message " + message);
+    private BoardView boardView = new BoardView();
+
+    public Boolean showWarning(String action) {
+        showMessage("Are you sure to " + action);
+        String response = getStringResponseWithMessage("Type \"yes\" or \"no\": ");
+        response.toLowerCase();
+
+        return (response.equals("yes") || response.equals("y"));
     }
-    public String getStringResponseWithMessage(String message)
-    {
+
+    public void showMessage(String message) {
+        System.out.println(message);
+    }
+
+    public String getStringResponseWithMessage(String message) {
         Scanner scanner = new Scanner(System.in);
         System.out.print(message);
         return scanner.next();
-    } 
-    public int getIntResponseWithMessage(String message)
-    {
+    }
+
+    public int getIntResponseWithMessage(String message) {
         Scanner scanner = new Scanner(System.in);
         System.out.print(message);
-        int number = Integer.parseInt(scanner.next());      
- 
+        int number = Integer.parseInt(scanner.next());
+
         return number;
-    } 
-    
+    }
+
     //Getters&Setters
     public MenuView getMenuView() {
         return menuView;
+    }
+
+    public BoardView getBoardView() {
+        return boardView;
     }
 }

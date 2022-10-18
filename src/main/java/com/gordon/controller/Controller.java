@@ -11,8 +11,7 @@ import com.gordon.view.View;
 public class Controller {
 
     private final View view = new View();
-    private final BoardController boardController = new BoardController();
-
+    private final BoardController boardController = new BoardController(view);
     private final MenuController menuController = new MenuController(view);
 
     private User currentUser = null;

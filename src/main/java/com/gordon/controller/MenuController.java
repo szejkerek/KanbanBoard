@@ -8,46 +8,45 @@ import com.gordon.view.View;
  * @author Bartłomiej Gordon - bartgor628@student.polsl.pl
  */
 public class MenuController {
+
     private View view = null;
     private MenuView menuView = null;
     private Controller controller = null;
-    
+
     private Boolean quitApp = false;
-    public MenuController(View _view)
-    {
+
+    public MenuController(View _view) {
         view = _view;
         menuView = view.getMenuView();
     }
-    public void init(Controller _controller)
-    {
+
+    public void init(Controller _controller) {
         controller = _controller;
     }
+
     public void startAppLoop() {
-        
+
         int response;
         do {
             menuView.displayMainMenu();
-            try{
-                response = view.getIntResponseWithMessage("Please make a selection [1-5]: ");
-            }
-            catch(NumberFormatException nfe) {
+            try {
+                response = view.getIntResponseWithMessage("Please make a selection [1-(????)]: ");
+            } catch (NumberFormatException nfe) {
                 view.showMessage("Message couldn't be parsed into number.");
                 view.showMessage("Please try again!");
 
                 continue;
             }
             processResponse(response);
-            
-        }while(!quitApp);
-        
+
+        } while (!quitApp);
+
     }
-    
-    private void processResponse(int response)
-    {
-        switch(response)
-        {
+
+    private void processResponse(int response) {
+        switch (response) {
             case 1:
-                controller.getBoardController();
+                controller.getBoardController().showBoard();
                 break;
             case 2:
                 break;
@@ -56,6 +55,11 @@ public class MenuController {
             case 4:
                 break;
             case 5:
+                break;
+            case 6:
+                controller.getBoardController().clearBoard();
+                break;
+            case 0:
                 view.showMessage("Quitting app...");
                 quitApp = true;
                 break;

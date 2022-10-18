@@ -10,7 +10,9 @@ public class MenuView {
         System.out.println("2. Add task");
         System.out.println("3. Add column");
         System.out.println("4. Manage column");
-        System.out.println("5. Exit");
+        System.out.println("5. Change board name");
+        System.out.println("6. Clear Board");
+        System.out.println("0. Exit");
 
     }
     
