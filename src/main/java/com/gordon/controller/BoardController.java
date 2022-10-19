@@ -32,11 +32,6 @@ public class BoardController {
     }
     
     public void createNewBoard(String name){
-        
-    }
-    
-    public void askForBoardName()
-    {
-        
+        board = new Board(name);
     }
 }

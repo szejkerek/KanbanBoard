@@ -14,17 +14,18 @@ public class Controller {
     private final BoardController boardController = new BoardController(view);
     private final MenuController menuController = new MenuController(view);
     
-    private User currentUser = null;
+    private User currentUser = new User(view);
     
     public Controller(CommandLineArguments arg) {
         //Initialize other controllers
         initializeControllers();
 
-        //Create user and ask for his credentials
+        //Ask for userName and boardName if user didnt specified it in parameters
+        String userName = askForName(arg.hasGotUserName(), arg.getUserName(), "Enter your user name: ");
+        String boardName = askForName(arg.hasGotBoardName(), arg.getBoardName(), "Enter your first board name: ");
 
-        System.out.println(arg.hasGotUserName() + arg.getUserName());
-        System.out.println(arg.hasGotBoardName() + arg.getBoardName());
-
+        currentUser.setName(userName);
+        boardController.createNewBoard(boardName);
     }
     
     public void startApp() {
