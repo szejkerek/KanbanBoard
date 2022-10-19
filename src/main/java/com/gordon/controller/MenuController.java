@@ -64,6 +64,7 @@ public class MenuController {
                 quitApp = true;
                 break;
             default:
+                view.showMessage("Please make a valid selection.");
                 break;
         }
     }

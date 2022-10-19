@@ -80,8 +80,10 @@ public class CommandLineArguments {
             while (!allParameters.contains(arguments[currentIndex])) {
                 tempString = mergeStrings(tempString, arguments[currentIndex], " ");
                 currentIndex++;
-                if (currentIndex >= arguments.length) {
-                    return "";
+                if (currentIndex >= arguments.length && !tempString.equals("")) {
+                    return tempString;
+                } else if (currentIndex >= arguments.length) {
+                    return tempString;
                 }
             }
         }

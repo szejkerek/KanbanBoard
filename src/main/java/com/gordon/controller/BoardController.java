@@ -31,7 +31,12 @@ public class BoardController {
         }
     }
     
-    public void createNewBoard(){
+    public void createNewBoard(String name){
+        
+    }
+    
+    public void askForBoardName()
+    {
         
     }
 }

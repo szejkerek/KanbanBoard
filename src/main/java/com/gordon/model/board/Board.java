@@ -10,6 +10,14 @@ import java.util.List;
 public class Board {
 
     String boardName;
+
+    public String getBoardName() {
+        return boardName;
+    }
+
+    public void setBoardName(String boardName) {
+        this.boardName = boardName;
+    }
     private List<Column> columns = null;
 
     public Board(String _boardName) {
@@ -28,4 +36,5 @@ public class Board {
     public Boolean isEmpty() {
         return (columns.size() == 0);
     }
+    
 }
