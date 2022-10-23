@@ -14,6 +14,14 @@ public class Task {
         this.content = content;
     }
     private User author;
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
     
     public String getTaskName() {
         return taskName;
@@ -23,8 +31,8 @@ public class Task {
         this.taskName = _taskName;
     }  
     
-    public Task(String taskName){
-        taskName = taskName;
+    public Task(String _taskName){
+        taskName = _taskName;
     }
     
     public String getContent() {

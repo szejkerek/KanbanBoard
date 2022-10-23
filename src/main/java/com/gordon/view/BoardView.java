@@ -33,12 +33,12 @@ public class BoardView {
             }
 
             for (Task t : c.getTasks()) {
+                System.out.print(t.getTaskName() + " - ");
                 if (!t.hasContent()) {
                     System.out.println("*task has no content*");
                     continue;
                 }
-                System.out.println(t.getTaskName() + " - " + t.getContent());
-
+                System.out.println(t.getContent());
             }
         }
     }
@@ -50,7 +50,7 @@ public class BoardView {
         }
         System.out.println("0. None");
         
-        int response = view.getIntResponseWithMessage("\nSpecify which column: ") - 1;  
+        int response = view.getIntResponseWithMessage("Specify which column: ") - 1;  
         if(response >= columnList.size() || response < 0 )
             response = -1;
         

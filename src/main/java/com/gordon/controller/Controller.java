@@ -15,6 +15,14 @@ public class Controller {
     private final MenuController menuController = new MenuController(view);
     
     private User currentUser = new User();
+
+    public User getCurrentUser() {
+        return currentUser;
+    }
+
+    public void setCurrentUser(User currentUser) {
+        this.currentUser = currentUser;
+    }
     
     public Controller(CommandLineArguments arg) {
         //Initialize other controllers

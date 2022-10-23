@@ -28,7 +28,7 @@ public class BoardController {
         view.getBoardView().showBoard(board);
     }
 
-    public void addColumn() {      
+    public void addColumn() {
         Column column = new Column(view.getStringResponseWithMessage("Type column name: "));
         try {
             board.addColumn(column);
@@ -37,35 +37,37 @@ public class BoardController {
         }
 
     }
-    
-    public void addTask(){
+
+    public void addTask() {
         int columnID = view.getBoardView().selectColumn(board.getColumns());
-        if(columnID == -1)
+        if (columnID == -1) {
             return;
+        }
         String taskName = view.getStringResponseWithMessage("Specify task name: ");
         Task newTask = new Task(taskName);
-        
-        view.showMessage("Do you want to upload content to task?");
-        if(view.confirmationMessage())
-        {
-          newTask.setContent(view.getStringResponseWithMessage("Enter tasks conntent: "));
-        }
+        newTask.setAuthor(controller.getCurrentUser());
 
         try {
-            board.addTask(newTask,board.getColumns().get(columnID));
+            board.addTask(newTask, board.getColumns().get(columnID));
         } catch (ItemAlreadyExsistException e) {
             System.err.println(e.getMessage());
         }
+
+        view.showMessage("Do you want to upload content to task?");
+        if (view.confirmationMessage()) {
+            newTask.setContent(view.getStringResponseWithMessage("Enter tasks conntent: "));
+        }
+        
+       
     }
 
     public void clearBoard() {
         if (view.showWarning("clear whole board?")) {
-            for(Column c : board.getColumns())
-            {
+            for (Column c : board.getColumns()) {
                 c.getTasks().clear();
             }
             board.getColumns().clear();
-            
+
             view.showMessage("BOARD CLEARED");
         }
     }

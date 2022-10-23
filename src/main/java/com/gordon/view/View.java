@@ -30,14 +30,20 @@ public class View {
     public String getStringResponseWithMessage(String message) {
         Scanner scanner = new Scanner(System.in);
         System.out.print(message);
-        return scanner.next();
+        return scanner.nextLine();
     }
 
     public int getIntResponseWithMessage(String message) {
         Scanner scanner = new Scanner(System.in);
         System.out.print(message);
-        int number = Integer.parseInt(scanner.next());
-
+        int number;
+        try{
+            number = Integer.parseInt(scanner.next());
+        }
+        catch(NumberFormatException ex)
+        {
+            number = 0;
+        }
         return number;
     }
 
