@@ -1,5 +1,6 @@
 package com.gordon.controller;
 
+import com.gordon.model.User;
 import com.gordon.view.MenuView;
 import com.gordon.view.View;
 
@@ -30,7 +31,7 @@ public class MenuController {
         do {
             menuView.displayMainMenu();
             try {
-                response = view.getIntResponseWithMessage("Please make a selection [1-(????)]: ");
+                response = view.getIntResponseWithMessage("Please make a selection [0-7]: ");
             } catch (NumberFormatException nfe) {
                 view.showMessage("Message couldn't be parsed into number.");
                 view.showMessage("Please try again!");
@@ -41,6 +42,13 @@ public class MenuController {
 
         } while (!quitApp);
 
+    }
+    
+    private void createNewUser()
+    {
+        User newUser = new User();
+        newUser.setName(view.getStringResponseWithMessage("Type your new user: "));
+        controller.setCurrentUser(newUser);
     }
 
     private void processResponse(int response) {
@@ -55,13 +63,15 @@ public class MenuController {
                 controller.getBoardController().addColumn();
                 break;
             case 4:
+                controller.getBoardController().moveTask();
                 break;
             case 5:
                 break;
             case 6:
                 controller.getBoardController().clearBoard();
                 break;
-            case 7:                
+            case 7:     
+                createNewUser();
                 break;
             case 0:
                 view.showMessage("Quitting app...");

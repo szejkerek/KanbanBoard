@@ -10,10 +10,6 @@ public class User {
 
     private String name = "";
 
-    public User() {
-        
-    }
-
     public void setName(String _name) {
         name = _name;
     }

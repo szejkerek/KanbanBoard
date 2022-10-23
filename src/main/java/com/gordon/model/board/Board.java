@@ -57,5 +57,13 @@ public class Board {
     public Boolean isEmpty() {
         return (columns.size() == 0);
     }
+    
+    public void moveTask(Task _task, int _fromID, int _toID){
+        if(!columns.get(_fromID).getTasks().contains(_task)){
+            return;
+        }
+        columns.get(_fromID).removeTask(_task);
+        columns.get(_toID).addTask(_task);     
+    }
 
 }

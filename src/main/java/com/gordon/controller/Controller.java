@@ -20,8 +20,8 @@ public class Controller {
         return currentUser;
     }
 
-    public void setCurrentUser(User currentUser) {
-        this.currentUser = currentUser;
+    public void setCurrentUser(User newUser) {
+        this.currentUser = newUser;
     }
     
     public Controller(CommandLineArguments arg) {

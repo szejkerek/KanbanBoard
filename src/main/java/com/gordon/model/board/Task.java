@@ -48,4 +48,9 @@ public class Task {
         taskName = taskName;
         content = initialContent;
     }
+    
+    public Task(Task _task){
+        taskName = _task.getTaskName();
+        content = _task.getContent();
+    }
 }

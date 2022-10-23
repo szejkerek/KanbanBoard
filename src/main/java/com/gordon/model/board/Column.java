@@ -10,6 +10,7 @@ import java.util.List;
  */
 public class Column {
 
+    private List<Task> tasks = null;
     private String columnName = "Empty column";
 
     public String getColumnName() {
@@ -19,7 +20,6 @@ public class Column {
     public void setColumnName(String columnName) {
         this.columnName = columnName;
     }
-    private List<Task> tasks = null;
 
     public void addTask(Task newTask) {
         tasks.add(newTask);
@@ -32,5 +32,9 @@ public class Column {
     public Column(String _columnName) {
         columnName = _columnName;
         tasks = new ArrayList<Task>(0);
+    }
+
+    public void removeTask(Task task) {
+        tasks.remove(task);
     }
 }

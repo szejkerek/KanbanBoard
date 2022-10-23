@@ -5,6 +5,7 @@ import com.gordon.model.board.Board;
 import com.gordon.model.board.Column;
 import com.gordon.model.board.Task;
 import com.gordon.view.View;
+import java.util.List;
 
 /**
  *
@@ -74,5 +75,28 @@ public class BoardController {
 
     public void createNewBoard(String name) {
         board = new Board(name);
+    }
+    
+    public void moveTask()
+    {
+        view.showMessage("Select column to take the task from.");
+        int _fromID = view.getBoardView().selectColumn(board.getColumns());       
+        if(_fromID == -1)
+            return;
+        
+        
+        view.showMessage("Select the task you want to move.");
+        List<Task> tempTaskList = board.getColumns().get(_fromID).getTasks();      
+        int tempTaskID = view.getBoardView().selectTask(tempTaskList);       
+        if(tempTaskID == -1)
+            return;
+        
+        Task tempTask = tempTaskList.get(tempTaskID);
+        view.showMessage("Select the column you want the task to move to.");
+        int _toID = view.getBoardView().selectColumn(board.getColumns());
+        if(_toID == -1)
+            return;
+        
+        board.moveTask(tempTask, _fromID, _toID);      
     }
 }
