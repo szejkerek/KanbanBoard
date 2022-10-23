@@ -11,6 +11,14 @@ import java.util.List;
 public class Column {
 
     private String columnName = "Empty column";
+
+    public String getColumnName() {
+        return columnName;
+    }
+
+    public void setColumnName(String columnName) {
+        this.columnName = columnName;
+    }
     private List<Task> tasks = null;
 
     public void addTask(Task newTask) {

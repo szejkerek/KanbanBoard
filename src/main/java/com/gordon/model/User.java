@@ -8,11 +8,10 @@ import com.gordon.view.View;
  */
 public class User {
 
-    private View view = null;
     private String name = "";
 
-    public User(View _view) {
-        view = _view;
+    public User() {
+        
     }
 
     public void setName(String _name) {

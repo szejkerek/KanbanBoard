@@ -14,7 +14,7 @@ public class Controller {
     private final BoardController boardController = new BoardController(view);
     private final MenuController menuController = new MenuController(view);
     
-    private User currentUser = new User(view);
+    private User currentUser = new User();
     
     public Controller(CommandLineArguments arg) {
         //Initialize other controllers

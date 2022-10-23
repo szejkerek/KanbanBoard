@@ -1,5 +1,6 @@
 package com.gordon.model.board;
 
+import com.gordon.model.ItemAlreadyExsistException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +10,13 @@ import java.util.List;
  */
 public class Board {
 
-    String boardName;
+    private String boardName;
+    private List<Column> columns = null;
+
+    public Board(String _boardName) {
+        boardName = _boardName;
+        columns = new ArrayList<Column>();
+    }
 
     public String getBoardName() {
         return boardName;
@@ -18,14 +25,28 @@ public class Board {
     public void setBoardName(String boardName) {
         this.boardName = boardName;
     }
-    private List<Column> columns = null;
 
-    public Board(String _boardName) {
-        boardName = _boardName;
-        columns = new ArrayList<Column>();
+    public void addTask(Task task, Column collumn) throws ItemAlreadyExsistException {
+        for (Column c : columns) {
+            for (Task t : c.getTasks()) {
+                if (t.getTaskName().equals(task.getTaskName())) {
+                    throw new ItemAlreadyExsistException("Task with this name already exist on board!");
+                }
+            }
+        }
+        for (Column c : columns) {
+            if (c.equals(collumn)) {
+                c.addTask(task);
+            }
+        }
     }
 
-    public void addColumn(Column collumn) {
+    public void addColumn(Column collumn) throws ItemAlreadyExsistException {
+        for (Column c : columns) {
+            if (c.getColumnName().equals(collumn.getColumnName())) {
+                throw new ItemAlreadyExsistException("Column with this name already exist!");
+            }
+        }
         columns.add(collumn);
     }
 
@@ -36,5 +57,5 @@ public class Board {
     public Boolean isEmpty() {
         return (columns.size() == 0);
     }
-    
+
 }

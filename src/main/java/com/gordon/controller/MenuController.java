@@ -49,8 +49,10 @@ public class MenuController {
                 controller.getBoardController().showBoard();
                 break;
             case 2:
+                controller.getBoardController().addTask();
                 break;
             case 3:
+                controller.getBoardController().addColumn();
                 break;
             case 4:
                 break;
@@ -58,6 +60,8 @@ public class MenuController {
                 break;
             case 6:
                 controller.getBoardController().clearBoard();
+                break;
+            case 7:                
                 break;
             case 0:
                 view.showMessage("Quitting app...");

@@ -8,11 +8,15 @@ import java.util.Scanner;
  */
 public class View {
 
-    private MenuView menuView = new MenuView();
-    private BoardView boardView = new BoardView();
+    private MenuView menuView = new MenuView(this);
+    private BoardView boardView = new BoardView(this);
 
     public Boolean showWarning(String action) {
         showMessage("Are you sure to " + action);
+        return confirmationMessage();
+    }
+
+    public Boolean confirmationMessage() {
         String response = getStringResponseWithMessage("Type \"yes\" or \"no\": ");
         response.toLowerCase();
 
