@@ -1,21 +1,34 @@
 package com.gordon.model;
 
-import com.gordon.view.View;
-
 /**
- *
+ * Class implementing the user. 
+ * 
  * @author Bartłomiej Gordon - bartgor628@student.polsl.pl
+ * @version 1.0
  */
 public class User {
 
-    private String name = "";
+    /**
+     * User name.
+     */
+    private String userName = "";
 
-    public void setName(String _name) {
-        name = _name;
+    /**
+     * Setter for user name.
+     *
+     * @param _userName New user name.
+     */
+    public void setUserName(String _userName) {
+        userName = _userName;
     }
 
-    public String getName() {
-        return name;
+    /**
+     * Getter for user name.
+     *
+     * @return User name.
+     */
+    public String getUserName() {
+        return userName;
     }
 
 }
