@@ -80,7 +80,7 @@ public class Controller {
         try {
             number = Integer.parseInt(scanner.next());
         } catch (NumberFormatException ex) {
-            number = 0;
+            number = -1;
         }
         return number;
     }

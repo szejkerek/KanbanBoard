@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Class implementing the board. 
- * 
+ * Class implementing the board.
+ *
  * @author Bartłomiej Gordon - bartgor628@student.polsl.pl
  * @version 1.0
  */
@@ -87,7 +87,9 @@ public class Board {
     }
 
     /**
-     * @return Checks if list of columns is empty.
+     * Function to change if list of columns is empty.
+     *
+     * @return True if board is empty, false otherwise.
      */
     public Boolean isEmpty() {
         return columns.isEmpty();

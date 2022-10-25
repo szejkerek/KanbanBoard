@@ -33,7 +33,7 @@ public class BoardController {
     /**
      * Board's controller constructor.
      *
-     * @param _controller
+     * @param _controller Main controller.
      */
     public BoardController(Controller _controller) {
         controller = _controller;

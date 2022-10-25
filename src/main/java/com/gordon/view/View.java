@@ -26,8 +26,9 @@ public class View {
     private final BoardView boardView = new BoardView();
 
     /**
-     *
-     * @param _controller
+     * View constructor.
+     * 
+     * @param _controller Main controller.
      */
     public View(Controller _controller) {
         controller = _controller;

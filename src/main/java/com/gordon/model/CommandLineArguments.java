@@ -143,14 +143,16 @@ public class CommandLineArguments {
     }
 
     /**
-     * @return Check if board name was specified in command-line arguments.
+     * Function checking if board name was specified in command-line arguments.
+     * @return True if board name was specified, false otherwise.
      */
     public Boolean hasGotBoardName() {
         return !boardName.equals("");
     }
 
     /**
-     * @return Check if user name was specified in command-line arguments.
+     * Function checking if user name was specified in command-line arguments.
+     * @return True if user name was specified, false otherwise.
      */
     public Boolean hasGotUserName() {
         return !userName.equals("");

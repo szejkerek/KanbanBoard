@@ -110,7 +110,8 @@ public class Task {
     }
 
     /**
-     * @return Checks if task has any content.
+     * Function that checks if task has any content.
+     * @return True if task has content, false otherwise.
      */
     public Boolean hasContent() {
         return !content.equals("");
