@@ -30,7 +30,7 @@ public class BoardController {
     }
 
     public void addColumn() {
-        Column column = new Column(view.getStringResponseWithMessage("Type column name: "));
+        Column column = new Column(controller.getStringResponseWithMessage("Type column name: "));
         try {
             board.addColumn(column);
         } catch (ItemAlreadyExsistException e) {
@@ -40,11 +40,11 @@ public class BoardController {
     }
 
     public void addTask() {
-        int columnID = view.getBoardView().selectColumn(board.getColumns());
+        int columnID = selectColumn(board.getColumns());
         if (columnID == -1) {
             return;
         }
-        String taskName = view.getStringResponseWithMessage("Specify task name: ");
+        String taskName = controller.getStringResponseWithMessage("Specify task name: ");
         Task newTask = new Task(taskName);
         newTask.setAuthor(controller.getCurrentUser());
 
@@ -56,7 +56,7 @@ public class BoardController {
 
         view.showMessage("Do you want to upload content to task?");
         if (view.confirmationMessage()) {
-            newTask.setContent(view.getStringResponseWithMessage("Enter tasks conntent: "));
+            newTask.setContent(controller.getStringResponseWithMessage("Enter tasks conntent: "));
         }
         
        
@@ -80,23 +80,52 @@ public class BoardController {
     public void moveTask()
     {
         view.showMessage("Select column to take the task from.");
-        int _fromID = view.getBoardView().selectColumn(board.getColumns());       
+        int _fromID = selectColumn(board.getColumns());       
         if(_fromID == -1)
             return;
         
         
         view.showMessage("Select the task you want to move.");
         List<Task> tempTaskList = board.getColumns().get(_fromID).getTasks();      
-        int tempTaskID = view.getBoardView().selectTask(tempTaskList);       
+        int tempTaskID = selectTask(tempTaskList);       
         if(tempTaskID == -1)
             return;
         
         Task tempTask = tempTaskList.get(tempTaskID);
         view.showMessage("Select the column you want the task to move to.");
-        int _toID = view.getBoardView().selectColumn(board.getColumns());
+        int _toID = selectColumn(board.getColumns());
         if(_toID == -1)
             return;
         
         board.moveTask(tempTask, _fromID, _toID);      
+    }
+    
+    
+    private int selectColumn(List<Column> columnList) {
+        for (int i = 0; i < columnList.size(); i++) {
+            System.out.println(i + 1 + ". " + columnList.get(i).getColumnName());
+        }
+        view.showMessage("0. None");
+        
+        int response = controller.getIntResponseWithMessage("Specify which column: ") - 1;  
+        if(response >= columnList.size() || response < 0 )
+            response = -1;
+        
+        //returned value -1 means none of the column was selected 
+        return response;
+    }
+    
+    private int selectTask(List<Task> taskList) {
+        for (int i = 0; i < taskList.size(); i++) {
+            System.out.println(i + 1 + ". " + taskList.get(i).getTaskName());
+        }
+        view.showMessage("0. None");
+        
+        int response = controller.getIntResponseWithMessage("Specify which task: ") - 1;  
+        if(response >= taskList.size() || response < 0 )
+            response = -1;
+        
+        //returned value -1 means none of the column was selected 
+        return response;
     }
 }

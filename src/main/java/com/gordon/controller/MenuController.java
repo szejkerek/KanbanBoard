@@ -31,7 +31,7 @@ public class MenuController {
         do {
             menuView.displayMainMenu();
             try {
-                response = view.getIntResponseWithMessage("Please make a selection [0-7]: ");
+                response = controller.getIntResponseWithMessage("Please make a selection [0-7]: ");
             } catch (NumberFormatException nfe) {
                 view.showMessage("Message couldn't be parsed into number.");
                 view.showMessage("Please try again!");
@@ -47,7 +47,7 @@ public class MenuController {
     private void createNewUser()
     {
         User newUser = new User();
-        newUser.setName(view.getStringResponseWithMessage("Type your new user: "));
+        newUser.setName(controller.getStringResponseWithMessage("Type your new user: "));
         controller.setCurrentUser(newUser);
     }
 

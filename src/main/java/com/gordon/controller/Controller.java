@@ -3,6 +3,7 @@ package com.gordon.controller;
 import com.gordon.model.CommandLineArguments;
 import com.gordon.model.User;
 import com.gordon.view.View;
+import java.util.Scanner;
 
 /**
  *
@@ -10,7 +11,7 @@ import com.gordon.view.View;
  */
 public class Controller {
     
-    private final View view = new View();
+    private final View view = new View(this);
     private final BoardController boardController = new BoardController(view);
     private final MenuController menuController = new MenuController(view);
     
@@ -77,5 +78,25 @@ public class Controller {
             //Name passed all cases
             return true;
         }
+    }
+    
+    public String getStringResponseWithMessage(String message) {
+        Scanner scanner = new Scanner(System.in);
+        view.showMessage(message);
+        return scanner.nextLine();
+    }
+
+    public int getIntResponseWithMessage(String message) {
+        Scanner scanner = new Scanner(System.in);
+        view.showMessage(message);
+        int number;
+        try{
+            number = Integer.parseInt(scanner.next());
+        }
+        catch(NumberFormatException ex)
+        {
+            number = 0;
+        }
+        return number;
     }
 }

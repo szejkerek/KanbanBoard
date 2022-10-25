@@ -1,5 +1,6 @@
 package com.gordon.view;
 
+import com.gordon.controller.Controller;
 import java.util.Scanner;
 
 /**
@@ -8,16 +9,21 @@ import java.util.Scanner;
  */
 public class View {
 
+    private Controller controller;
     private MenuView menuView = new MenuView(this);
     private BoardView boardView = new BoardView(this);
 
+    public View(Controller _controller)
+    {
+        controller = _controller;
+    }
     public Boolean showWarning(String action) {
         showMessage("Are you sure to " + action);
         return confirmationMessage();
     }
 
     public Boolean confirmationMessage() {
-        String response = getStringResponseWithMessage("Type \"yes\" or \"no\": ");
+        String response = controller.getStringResponseWithMessage("Type \"yes\" or \"no\": ");
         response.toLowerCase();
 
         return (response.equals("yes") || response.equals("y"));
@@ -27,25 +33,6 @@ public class View {
         System.out.println(message);
     }
 
-    public String getStringResponseWithMessage(String message) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print(message);
-        return scanner.nextLine();
-    }
-
-    public int getIntResponseWithMessage(String message) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print(message);
-        int number;
-        try{
-            number = Integer.parseInt(scanner.next());
-        }
-        catch(NumberFormatException ex)
-        {
-            number = 0;
-        }
-        return number;
-    }
 
     //Getters&Setters
     public MenuView getMenuView() {

@@ -42,32 +42,4 @@ public class BoardView {
             }
         }
     }
-
-    public int selectColumn(List<Column> columnList) {
-        for (int i = 0; i < columnList.size(); i++) {
-            System.out.println(i + 1 + ". " + columnList.get(i).getColumnName());
-        }
-        System.out.println("0. None");
-        
-        int response = view.getIntResponseWithMessage("Specify which column: ") - 1;  
-        if(response >= columnList.size() || response < 0 )
-            response = -1;
-        
-        //returned value -1 means none of the column was selected 
-        return response;
-    }
-    
-    public int selectTask(List<Task> taskList) {
-        for (int i = 0; i < taskList.size(); i++) {
-            System.out.println(i + 1 + ". " + taskList.get(i).getTaskName());
-        }
-        System.out.println("0. None");
-        
-        int response = view.getIntResponseWithMessage("Specify which task: ") - 1;  
-        if(response >= taskList.size() || response < 0 )
-            response = -1;
-        
-        //returned value -1 means none of the column was selected 
-        return response;
-    }
 }
