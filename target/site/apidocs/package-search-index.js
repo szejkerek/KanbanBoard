@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.gordon.controller"},{"l":"com.gordon.jiraclone"},{"l":"com.gordon.model"},{"l":"com.gordon.model.board"},{"l":"com.gordon.view"}];updateSearchResults();

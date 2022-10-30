@@ -1,0 +1,44 @@
+-------------------------------------------------------------------------------
+Test set: com.gordon.model.board.BoardTest
+-------------------------------------------------------------------------------
+Tests run: 12, Failures: 10, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec <<< FAILURE! - in com.gordon.model.board.BoardTest
+testMoveSameTask  Time elapsed: 0.006 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: The test case is a prototype.
+	at com.gordon.model.board.BoardTest.testMoveSameTask(BoardTest.java:75)
+
+testMoveNullTask  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: The test case is a prototype.
+	at com.gordon.model.board.BoardTest.testMoveNullTask(BoardTest.java:94)
+
+testGetBoardName  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: The test case is a prototype.
+	at com.gordon.model.board.BoardTest.testGetBoardName(BoardTest.java:130)
+
+testAddColumn  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: The test case is a prototype.
+	at com.gordon.model.board.BoardTest.testAddColumn(BoardTest.java:103)
+
+testMoveTaskToSameColums  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: The test case is a prototype.
+	at com.gordon.model.board.BoardTest.testMoveTaskToSameColums(BoardTest.java:81)
+
+testMoveTask  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: The test case is a prototype.
+	at com.gordon.model.board.BoardTest.testMoveTask(BoardTest.java:69)
+
+testSetBoardName  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: The test case is a prototype.
+	at com.gordon.model.board.BoardTest.testSetBoardName(BoardTest.java:139)
+
+testMoveTaskToNonExsistentColumn  Time elapsed: 0.001 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: The test case is a prototype.
+	at com.gordon.model.board.BoardTest.testMoveTaskToNonExsistentColumn(BoardTest.java:87)
+
+testGetColumns  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: The test case is a prototype.
+	at com.gordon.model.board.BoardTest.testGetColumns(BoardTest.java:121)
+
+testIsEmpty  Time elapsed: 0.001 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: The test case is a prototype.
+	at com.gordon.model.board.BoardTest.testIsEmpty(BoardTest.java:112)
+

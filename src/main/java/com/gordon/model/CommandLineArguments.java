@@ -67,6 +67,7 @@ public class CommandLineArguments {
         //Process strings in argumets
         findUserName();
         findBoardName();
+       
     }
 
     /**
@@ -156,5 +157,9 @@ public class CommandLineArguments {
      */
     public Boolean hasGotUserName() {
         return !userName.equals("");
+    }   
+    
+    public void showHelp(){
+       System.out.println("Command-line arguments: -b [board name] -u [user name]");
     }
 }

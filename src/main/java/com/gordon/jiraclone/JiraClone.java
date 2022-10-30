@@ -28,7 +28,11 @@ public class JiraClone {
 
         CommandLineArguments commandLineArgs = new CommandLineArguments();
         commandLineArgs.processArguments(args);
-
+        
+        if(!commandLineArgs.hasGotUserName() || !commandLineArgs.hasGotUserName()){
+            commandLineArgs.showHelp();
+        }
+        
         Controller controller = new Controller(commandLineArgs);
         controller.startApp();
     }

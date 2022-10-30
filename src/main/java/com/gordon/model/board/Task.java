@@ -54,7 +54,7 @@ public class Task {
         taskName = _task.getTaskName();
         content = _task.getContent();
     }
-
+//penis
     /**
      * Getter for the author of the task.
      *

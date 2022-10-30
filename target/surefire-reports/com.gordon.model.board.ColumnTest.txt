@@ -1,0 +1,32 @@
+-------------------------------------------------------------------------------
+Test set: com.gordon.model.board.ColumnTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 7, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE! - in com.gordon.model.board.ColumnTest
+testGetTasks  Time elapsed: 0.001 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: The test case is a prototype.
+	at com.gordon.model.board.ColumnTest.testGetTasks(ColumnTest.java:78)
+
+testAddTaskNullTask  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: The test case is a prototype.
+	at com.gordon.model.board.ColumnTest.testAddTaskNullTask(ColumnTest.java:69)
+
+testAddTask  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: The test case is a prototype.
+	at com.gordon.model.board.ColumnTest.testAddTask(ColumnTest.java:63)
+
+testGetColumnName  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: The test case is a prototype.
+	at com.gordon.model.board.ColumnTest.testGetColumnName(ColumnTest.java:45)
+
+testRemoveNullTask  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: The test case is a prototype.
+	at com.gordon.model.board.ColumnTest.testRemoveNullTask(ColumnTest.java:36)
+
+testSetColumnName  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: The test case is a prototype.
+	at com.gordon.model.board.ColumnTest.testSetColumnName(ColumnTest.java:54)
+
+testRemoveTask  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: The test case is a prototype.
+	at com.gordon.model.board.ColumnTest.testRemoveTask(ColumnTest.java:27)
+
