@@ -177,7 +177,7 @@ public class BoardTest {
     }
     
      /**
-     * Test of isEmpty method, of class Board.
+     * Test of hasConntent method, of class Board.
      */
     @Test
     public void testHasContent() {

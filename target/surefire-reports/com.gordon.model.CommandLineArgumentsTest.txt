@@ -6,7 +6,7 @@ testProcessArgumentsSetUserName  Time elapsed: 0.003 sec  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <user> but was: < user>
 	at com.gordon.model.CommandLineArgumentsTest.testProcessArgumentsSetUserName(CommandLineArgumentsTest.java:27)
 
-testGetBoardName  Time elapsed: 0 sec  <<< FAILURE!
+testGetBoardName  Time elapsed: 0.001 sec  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <board> but was: < board>
 	at com.gordon.model.CommandLineArgumentsTest.testGetBoardName(CommandLineArgumentsTest.java:53)
 
@@ -14,7 +14,7 @@ testProcessArgumentsSetBoardName  Time elapsed: 0 sec  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <board> but was: < board>
 	at com.gordon.model.CommandLineArgumentsTest.testProcessArgumentsSetBoardName(CommandLineArgumentsTest.java:38)
 
-testGetUserName  Time elapsed: 0 sec  <<< FAILURE!
+testGetUserName  Time elapsed: 0.001 sec  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <user> but was: < user>
 	at com.gordon.model.CommandLineArgumentsTest.testGetUserName(CommandLineArgumentsTest.java:68)
 

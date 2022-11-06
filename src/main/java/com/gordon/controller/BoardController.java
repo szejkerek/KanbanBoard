@@ -6,6 +6,7 @@ import com.gordon.model.board.Column;
 import com.gordon.model.board.Task;
 import com.gordon.view.View;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * Controller for the board.
@@ -90,21 +91,21 @@ public class BoardController {
         if (view.confirmationMessage()) {
             newTask.setContent(controller.getStringResponseWithMessage("Enter tasks conntent: "));
         }
-
     }
 
     /**
      * Clear board.
      */
     public void clearBoard() {
-        if (view.showWarning("clear whole board?")) {
-            for (Column c : board.getColumns()) {
-                c.getTasks().clear();
-            }
-            board.getColumns().clear();
+        if (!view.showWarning("Do you want to clear the whole board?")) 
+            return;
+        
+        Stream<Column> stream;       
+        stream = board.getColumns().stream();
+        stream.forEach(p -> p.getTasks().clear());
 
-            view.showMessage("BOARD CLEARED");
-        }
+        board.getColumns().clear();
+        view.showMessage("BOARD CLEARED");     
     }
 
     /**
@@ -149,8 +150,9 @@ public class BoardController {
      * @param columnList list of columns to manage.
      */
     private int selectColumn(List<Column> columnList) {
+        
         for (int i = 0; i < columnList.size(); i++) {
-            System.out.println(i + 1 + ". " + columnList.get(i).getColumnName());
+            view.showMessage(i + 1 + ". " + columnList.get(i).getColumnName());
         }
         view.showMessage("0. None");
 
@@ -170,7 +172,7 @@ public class BoardController {
      */
     private int selectTask(List<Task> taskList) {
         for (int i = 0; i < taskList.size(); i++) {
-            System.out.println(i + 1 + ". " + taskList.get(i).getTaskName());
+            view.showMessage(i + 1 + ". " + taskList.get(i).getTaskName());
         }
         view.showMessage("0. None");
 

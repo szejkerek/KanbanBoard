@@ -69,10 +69,10 @@
     <system-out><![CDATA[testProcessArgumentsSetUserName
 ]]></system-out>
   </testcase>
-  <testcase name="testHasGotNoneUserName" classname="com.gordon.model.CommandLineArgumentsTest" time="0.001"/>
-  <testcase name="testHasGotUserName" classname="com.gordon.model.CommandLineArgumentsTest" time="0"/>
+  <testcase name="testHasGotNoneUserName" classname="com.gordon.model.CommandLineArgumentsTest" time="0"/>
+  <testcase name="testHasGotUserName" classname="com.gordon.model.CommandLineArgumentsTest" time="0.001"/>
   <testcase name="testHasGotBoardName" classname="com.gordon.model.CommandLineArgumentsTest" time="0"/>
-  <testcase name="testGetBoardName" classname="com.gordon.model.CommandLineArgumentsTest" time="0">
+  <testcase name="testGetBoardName" classname="com.gordon.model.CommandLineArgumentsTest" time="0.001">
     <failure message="expected: &lt;board&gt; but was: &lt; board&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <board> but was: < board>
 	at com.gordon.model.CommandLineArgumentsTest.testGetBoardName(CommandLineArgumentsTest.java:53)
 ]]></failure>
@@ -87,7 +87,7 @@
     <system-out><![CDATA[testProcessArgumentsSetBoardName
 ]]></system-out>
   </testcase>
-  <testcase name="testGetUserName" classname="com.gordon.model.CommandLineArgumentsTest" time="0">
+  <testcase name="testGetUserName" classname="com.gordon.model.CommandLineArgumentsTest" time="0.001">
     <failure message="expected: &lt;user&gt; but was: &lt; user&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <user> but was: < user>
 	at com.gordon.model.CommandLineArgumentsTest.testGetUserName(CommandLineArgumentsTest.java:68)
 ]]></failure>

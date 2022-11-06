@@ -55,8 +55,8 @@ public class Column {
      *
      * @param columnName Column name.
      */
-    public void setColumnName(String columnName) {
-        this.columnName = columnName;
+    public void setColumnName(String _columnName) {
+        columnName = _columnName;
     }
 
     /**
