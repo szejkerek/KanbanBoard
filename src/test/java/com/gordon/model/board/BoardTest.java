@@ -175,4 +175,24 @@ public class BoardTest {
         }
         assertEquals(board.getColumns().get(0).getTasks().get(0).getContent(), "");  
     }
+    
+     /**
+     * Test of isEmpty method, of class Board.
+     */
+    @Test
+    public void testHasContent() {
+        System.out.println("testIsEmpty");
+        Board board = new Board("name");
+        Column column = new Column("Column");
+        
+        Task newTask = new Task("Task");
+        
+        try {
+            board.addColumn(column);
+            board.addTask(newTask, column);
+        } catch (ItemAlreadyExistsException e) {
+            fail("Exception was caught.");
+        }
+        assertFalse(board.getColumns().get(0).getTasks().get(0).hasContent());  
+    }
 }

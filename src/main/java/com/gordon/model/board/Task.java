@@ -1,6 +1,7 @@
 package com.gordon.model.board;
 
 import com.gordon.model.User;
+import com.gordon.model.board.enums.TaskPriority;
 
 /**
  * Class implementing the task. 
@@ -8,12 +9,18 @@ import com.gordon.model.User;
  * @author Bartłomiej Gordon - bartgor628@student.polsl.pl
  * @version 1.1
  */
+
 public class Task {
 
     /**
      * Task name.
      */
     private String taskName = "";
+    
+     /**
+     * Task priority.
+     */
+    private TaskPriority taskPriority = TaskPriority.Lowest;
 
     /**
      * Content of the task.
@@ -54,7 +61,7 @@ public class Task {
         taskName = _task.getTaskName();
         content = _task.getContent();
     }
-//penis
+
     /**
      * Getter for the author of the task.
      *
@@ -115,6 +122,24 @@ public class Task {
      */
     public Boolean hasContent() {
         return !content.equals("");
+    }
+    
+     /**
+     * Setter for task priority.
+     *
+     * @param content Task content.
+     */
+    public void setTaskPriority(TaskPriority _taskPriority) {
+        taskPriority = _taskPriority;
+    }
+
+    /**
+     * Getter for task priority.
+     *
+     * @return Task priority.
+     */
+    public TaskPriority getTaskPriority() {
+        return taskPriority;
     }
 
 }
