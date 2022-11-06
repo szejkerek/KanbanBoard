@@ -149,8 +149,7 @@ public class BoardController {
      *
      * @param columnList list of columns to manage.
      */
-    private int selectColumn(List<Column> columnList) {
-        
+    private int selectColumn(List<Column> columnList) {     
         for (int i = 0; i < columnList.size(); i++) {
             view.showMessage(i + 1 + ". " + columnList.get(i).getColumnName());
         }

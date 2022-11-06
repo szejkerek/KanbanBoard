@@ -127,7 +127,7 @@ public class Task {
      /**
      * Setter for task priority.
      *
-     * @param content Task content.
+     * @param _taskPriority Task content.
      */
     public void setTaskPriority(TaskPriority _taskPriority) {
         taskPriority = _taskPriority;

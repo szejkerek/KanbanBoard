@@ -53,7 +53,7 @@ public class Column {
     /**
      * Setter for column name.
      *
-     * @param columnName Column name.
+     * @param _columnName Column name.
      */
     public void setColumnName(String _columnName) {
         columnName = _columnName;
