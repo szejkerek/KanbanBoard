@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.gordon.model.CommandLineArgumentsTest" time="0.003" tests="8" errors="0" skipped="0" failures="4">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.gordon.model.CommandLineArgumentsTest" time="0.007" tests="8" errors="0" skipped="0" failures="4">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="17.0.4.1+1-LTS-2"/>
@@ -62,17 +62,17 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testProcessArgumentsSetUserName" classname="com.gordon.model.CommandLineArgumentsTest" time="0">
+  <testcase name="testProcessArgumentsSetUserName" classname="com.gordon.model.CommandLineArgumentsTest" time="0.003">
     <failure message="expected: &lt;user&gt; but was: &lt; user&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <user> but was: < user>
 	at com.gordon.model.CommandLineArgumentsTest.testProcessArgumentsSetUserName(CommandLineArgumentsTest.java:27)
 ]]></failure>
     <system-out><![CDATA[testProcessArgumentsSetUserName
 ]]></system-out>
   </testcase>
-  <testcase name="testHasGotNoneUserName" classname="com.gordon.model.CommandLineArgumentsTest" time="0"/>
-  <testcase name="testHasGotUserName" classname="com.gordon.model.CommandLineArgumentsTest" time="0.001"/>
+  <testcase name="testHasGotNoneUserName" classname="com.gordon.model.CommandLineArgumentsTest" time="0.001"/>
+  <testcase name="testHasGotUserName" classname="com.gordon.model.CommandLineArgumentsTest" time="0"/>
   <testcase name="testHasGotBoardName" classname="com.gordon.model.CommandLineArgumentsTest" time="0"/>
-  <testcase name="testGetBoardName" classname="com.gordon.model.CommandLineArgumentsTest" time="0.001">
+  <testcase name="testGetBoardName" classname="com.gordon.model.CommandLineArgumentsTest" time="0">
     <failure message="expected: &lt;board&gt; but was: &lt; board&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <board> but was: < board>
 	at com.gordon.model.CommandLineArgumentsTest.testGetBoardName(CommandLineArgumentsTest.java:53)
 ]]></failure>
@@ -80,7 +80,7 @@
 ]]></system-out>
   </testcase>
   <testcase name="testHasGotNoneBoardName" classname="com.gordon.model.CommandLineArgumentsTest" time="0"/>
-  <testcase name="testProcessArgumentsSetBoardName" classname="com.gordon.model.CommandLineArgumentsTest" time="0.001">
+  <testcase name="testProcessArgumentsSetBoardName" classname="com.gordon.model.CommandLineArgumentsTest" time="0">
     <failure message="expected: &lt;board&gt; but was: &lt; board&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <board> but was: < board>
 	at com.gordon.model.CommandLineArgumentsTest.testProcessArgumentsSetBoardName(CommandLineArgumentsTest.java:38)
 ]]></failure>

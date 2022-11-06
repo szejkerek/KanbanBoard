@@ -39,6 +39,9 @@ public class BoardTest {
         assertTrue(found);
     }
 
+    /**
+     * Test of addTask method, of class Board adding the same task.
+     */
     @Test
     public void testAddTaskAlreadyInCollumn() {
         System.out.println("addTask");
@@ -65,33 +68,74 @@ public class BoardTest {
      */
     @Test
     public void testMoveTask() {
-        System.out.println("moveTask");
-        fail("The test case is a prototype.");
+        System.out.println("addTask");
+        Board board = new Board("name");
+        Column column = new Column("Column");
+        Column column2 = new Column("Column2");
+        
+        Task newTask = new Task("Task", "new task");
+        
+        try {
+            board.addColumn(column);
+            board.addColumn(column2);
+            board.addTask(newTask, column);
+        } catch (ItemAlreadyExistsException e) {
+            fail("Exception was caught.");
+        }
+        
+        board.moveTask(newTask, 0, 1);
+
+        assertEquals(board.getColumns().get(1).getTasks().get(0), newTask);    
     }
 
+    /**
+     * Test of moveTask method, of class Board move to the same column.
+     */
     @Test
-    public void testMoveSameTask() {
-        System.out.println("moveTask");
-        fail("The test case is a prototype.");
+    public void testMoveTaskToTheSameColumn() {
+        System.out.println("addTask");
+        Board board = new Board("name");
+        Column column = new Column("Column");
+        Column column2 = new Column("Column2");
+        
+        Task newTask = new Task("Task", "new task");
+        
+        try {
+            board.addColumn(column);
+            board.addColumn(column2);
+            board.addTask(newTask, column);
+        } catch (ItemAlreadyExistsException e) {
+            fail("Exception was caught.");
+        }
+        
+        board.moveTask(newTask, 0, 0);
+
+        assertEquals(board.getColumns().get(0).getTasks().get(0), newTask);    
     }
 
-    @Test
-    public void testMoveTaskToSameColums() {
-        System.out.println("moveTask");
-        fail("The test case is a prototype.");
-    }
-
+     /**
+     * Test of moveTask method, of class Board.
+     */
     @Test
     public void testMoveTaskToNonExsistentColumn() {
-        System.out.println("moveTask");
-        fail("The test case is a prototype.");
-    }
+        System.out.println("addTask");
+        Board board = new Board("name");
+        Column column = new Column("Column");
+        Column column2 = new Column("Column2");
+        
+        Task newTask = new Task("Task", "new task");
+        
+        try {
+            board.addColumn(column);
+            board.addColumn(column2);
+            board.addTask(newTask, column);
+        } catch (ItemAlreadyExistsException e) {
+            fail("Exception was caught.");
+        }
+        
+        board.moveTask(newTask, 0, 0);
 
-    
-    @Test
-    public void testMoveNullTask() {
-        System.out.println("moveTask");
-        fail("The test case is a prototype.");
+        assertEquals(board.getColumns().get(0).getTasks().get(0), newTask);  
     }
     
     /**
@@ -99,8 +143,17 @@ public class BoardTest {
      */
     @Test
     public void testAddColumn() {
-        System.out.println("addColumn");
-        fail("The test case is a prototype.");
+        System.out.println("testAddColumn");
+        Board board = new Board("name");
+        Column column = new Column("Column");
+        
+        try {
+            board.addColumn(column);
+        } catch (ItemAlreadyExistsException e) {
+            fail("Exception was caught.");
+        }
+
+        assertEquals(board.getColumns().get(0), column);  
     }
 
     /**
@@ -108,35 +161,18 @@ public class BoardTest {
      */
     @Test
     public void testIsEmpty() {
-        System.out.println("isEmpty");
-        fail("The test case is a prototype.");
+        System.out.println("testIsEmpty");
+        Board board = new Board("name");
+        Column column = new Column("Column");
+        
+        Task newTask = new Task("Task");
+        
+        try {
+            board.addColumn(column);
+            board.addTask(newTask, column);
+        } catch (ItemAlreadyExistsException e) {
+            fail("Exception was caught.");
+        }
+        assertEquals(board.getColumns().get(0).getTasks().get(0).getContent(), "");  
     }
-
-    /**
-     * Test of getColumns method, of class Board.
-     */
-    @Test
-    public void testGetColumns() {
-        System.out.println("getColumns");
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getBoardName method, of class Board.
-     */
-    @Test
-    public void testGetBoardName() {
-        System.out.println("getBoardName");
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setBoardName method, of class Board.
-     */
-    @Test
-    public void testSetBoardName() {
-        System.out.println("setBoardName");
-        fail("The test case is a prototype.");
-    }
-
 }

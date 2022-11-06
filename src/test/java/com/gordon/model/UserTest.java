@@ -18,7 +18,7 @@ public class UserTest {
      * Test of setUserName method, of class User.
      */
     @ParameterizedTest
-    @ValueSource(strings = {"1213", "       9999(_)(&^%$#", "87654ffffffffffffffffffffffffffffffffffffffffffff321"})
+    @ValueSource(strings = {"1213", "       9999(_)(&^%$#", "87654ffffffffffffffffffffffffffffffffffffffffffff321", "normal user name", "", "*%#%^"})
     public void testSetUserName(String testValue) {
         System.out.println("setUserName");
         User instance = new User();
@@ -30,7 +30,7 @@ public class UserTest {
      * Test of getUserName method, of class User.
      */
     @ParameterizedTest
-    @ValueSource(strings = {"1213eewew", "       9999(_)(&^%$#", "87654321"})
+    @ValueSource(strings = {"1213eewew", "       9999(_)(&^%$#", "87654321", "board name", "normal board name", "$%^&*", "", "1"})
     public void testGetUserName(String testValue) {
         System.out.println("getUserName");
         User instance = new User();

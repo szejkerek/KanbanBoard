@@ -8,7 +8,7 @@ import java.util.List;
  * Class implementing the board.
  *
  * @author Bartłomiej Gordon - bartgor628@student.polsl.pl
- * @version 1.0
+ * @version 1.2
  */
 public class Board {
 

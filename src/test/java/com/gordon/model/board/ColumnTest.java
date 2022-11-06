@@ -1,10 +1,5 @@
 package com.gordon.model.board;
 
-import java.util.List;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -23,35 +18,27 @@ public class ColumnTest {
      */
     @Test
     public void testRemoveTask() {
-        System.out.println("removeTask");
-        fail("The test case is a prototype.");
+        Column c = new Column("Column");
+        Task t = new Task("Task");
+        c.addTask(t);
+        c.removeTask(t);
+        
+        assertEquals(0, c.getTasks().size());     
     }
     
      /**
      * Test of removeTask method, of class Column.
      */
     @Test
-    public void testRemoveNullTask() {
-        System.out.println("removeTask");
-        fail("The test case is a prototype.");
-    }
+    public void testRemoveTaskNotInColumn() {
+        Column c = new Column("Column");
+        Task t = new Task("Task");
+        Task fakeTask = new Task("Task");
 
-    /**
-     * Test of getColumnName method, of class Column.
-     */
-    @Test
-    public void testGetColumnName() {
-        System.out.println("getColumnName");
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setColumnName method, of class Column.
-     */
-    @Test
-    public void testSetColumnName() {
-        System.out.println("setColumnName");
-        fail("The test case is a prototype.");
+        c.addTask(t);
+        c.removeTask(fakeTask);
+        
+        assertEquals(1, c.getTasks().size());  
     }
 
     /**
@@ -60,22 +47,12 @@ public class ColumnTest {
     @Test
     public void testAddTask() {
         System.out.println("addTask");
-        fail("The test case is a prototype.");
-    }
-    
-    @Test
-    public void testAddTaskNullTask() {
-        System.out.println("addTask");
-        fail("The test case is a prototype.");
+        Column c = new Column("Column");
+        Task t = new Task("Task");
+
+        c.addTask(t);
+        
+        assertEquals(1, c.getTasks().size());  
     }
 
-    /**
-     * Test of getTasks method, of class Column.
-     */
-    @Test
-    public void testGetTasks() {
-        System.out.println("getTasks");
-        fail("The test case is a prototype.");
-    }
-    
 }

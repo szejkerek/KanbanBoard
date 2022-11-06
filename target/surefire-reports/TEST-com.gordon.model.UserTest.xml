@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.gordon.model.UserTest" time="0.014" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.gordon.model.UserTest" time="0.033" tests="14" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="17.0.4.1+1-LTS-2"/>
@@ -62,10 +62,18 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testSetUserName{String}[1]" classname="com.gordon.model.UserTest" time="0.008"/>
+  <testcase name="testSetUserName{String}[1]" classname="com.gordon.model.UserTest" time="0.012"/>
   <testcase name="testSetUserName{String}[2]" classname="com.gordon.model.UserTest" time="0"/>
-  <testcase name="testSetUserName{String}[3]" classname="com.gordon.model.UserTest" time="0.001"/>
-  <testcase name="testGetUserName{String}[1]" classname="com.gordon.model.UserTest" time="0"/>
+  <testcase name="testSetUserName{String}[3]" classname="com.gordon.model.UserTest" time="0"/>
+  <testcase name="testSetUserName{String}[4]" classname="com.gordon.model.UserTest" time="0"/>
+  <testcase name="testSetUserName{String}[5]" classname="com.gordon.model.UserTest" time="0"/>
+  <testcase name="testSetUserName{String}[6]" classname="com.gordon.model.UserTest" time="0"/>
+  <testcase name="testGetUserName{String}[1]" classname="com.gordon.model.UserTest" time="0.001"/>
   <testcase name="testGetUserName{String}[2]" classname="com.gordon.model.UserTest" time="0"/>
-  <testcase name="testGetUserName{String}[3]" classname="com.gordon.model.UserTest" time="0.001"/>
+  <testcase name="testGetUserName{String}[3]" classname="com.gordon.model.UserTest" time="0"/>
+  <testcase name="testGetUserName{String}[4]" classname="com.gordon.model.UserTest" time="0.001"/>
+  <testcase name="testGetUserName{String}[5]" classname="com.gordon.model.UserTest" time="0"/>
+  <testcase name="testGetUserName{String}[6]" classname="com.gordon.model.UserTest" time="0"/>
+  <testcase name="testGetUserName{String}[7]" classname="com.gordon.model.UserTest" time="0"/>
+  <testcase name="testGetUserName{String}[8]" classname="com.gordon.model.UserTest" time="0.001"/>
 </testsuite>

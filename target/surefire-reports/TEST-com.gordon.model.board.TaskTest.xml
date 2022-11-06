@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.gordon.model.board.TaskTest" time="0" tests="7" errors="0" skipped="0" failures="7">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.gordon.model.board.TaskTest" time="0.001" tests="7" errors="0" skipped="0" failures="7">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="17.0.4.1+1-LTS-2"/>
@@ -64,49 +64,49 @@
   </properties>
   <testcase name="testHasContent" classname="com.gordon.model.board.TaskTest" time="0">
     <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.TaskTest.testHasContent(TaskTest.java:81)
+	at com.gordon.model.board.TaskTest.testHasContent(TaskTest.java:76)
 </failure>
     <system-out><![CDATA[hasContent
 ]]></system-out>
   </testcase>
   <testcase name="testSetContent" classname="com.gordon.model.board.TaskTest" time="0">
     <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.TaskTest.testSetContent(TaskTest.java:63)
+	at com.gordon.model.board.TaskTest.testSetContent(TaskTest.java:58)
 </failure>
     <system-out><![CDATA[setContent
 ]]></system-out>
   </testcase>
   <testcase name="testSetAuthor" classname="com.gordon.model.board.TaskTest" time="0">
     <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.TaskTest.testSetAuthor(TaskTest.java:36)
+	at com.gordon.model.board.TaskTest.testSetAuthor(TaskTest.java:31)
 </failure>
     <system-out><![CDATA[setAuthor
 ]]></system-out>
   </testcase>
   <testcase name="testSetTaskName" classname="com.gordon.model.board.TaskTest" time="0">
     <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.TaskTest.testSetTaskName(TaskTest.java:54)
+	at com.gordon.model.board.TaskTest.testSetTaskName(TaskTest.java:49)
 </failure>
     <system-out><![CDATA[setTaskName
 ]]></system-out>
   </testcase>
   <testcase name="testGetAuthor" classname="com.gordon.model.board.TaskTest" time="0">
     <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.TaskTest.testGetAuthor(TaskTest.java:27)
+	at com.gordon.model.board.TaskTest.testGetAuthor(TaskTest.java:22)
 </failure>
     <system-out><![CDATA[getAuthor
 ]]></system-out>
   </testcase>
   <testcase name="testGetTaskName" classname="com.gordon.model.board.TaskTest" time="0">
     <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.TaskTest.testGetTaskName(TaskTest.java:45)
+	at com.gordon.model.board.TaskTest.testGetTaskName(TaskTest.java:40)
 </failure>
     <system-out><![CDATA[getTaskName
 ]]></system-out>
   </testcase>
   <testcase name="testGetContent" classname="com.gordon.model.board.TaskTest" time="0">
     <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.TaskTest.testGetContent(TaskTest.java:72)
+	at com.gordon.model.board.TaskTest.testGetContent(TaskTest.java:67)
 </failure>
     <system-out><![CDATA[getContent
 ]]></system-out>

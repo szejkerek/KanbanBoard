@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.gordon.model.board.BoardTest" time="0.027" tests="12" errors="0" skipped="0" failures="10">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.gordon.model.board.BoardTest" time="0.018" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="17.0.4.1+1-LTS-2"/>
@@ -62,76 +62,11 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testAddTask" classname="com.gordon.model.board.BoardTest" time="0.013"/>
-  <testcase name="testMoveSameTask" classname="com.gordon.model.board.BoardTest" time="0.006">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.BoardTest.testMoveSameTask(BoardTest.java:75)
-</failure>
-    <system-out><![CDATA[moveTask
-]]></system-out>
-  </testcase>
-  <testcase name="testMoveNullTask" classname="com.gordon.model.board.BoardTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.BoardTest.testMoveNullTask(BoardTest.java:94)
-</failure>
-    <system-out><![CDATA[moveTask
-]]></system-out>
-  </testcase>
-  <testcase name="testGetBoardName" classname="com.gordon.model.board.BoardTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.BoardTest.testGetBoardName(BoardTest.java:130)
-</failure>
-    <system-out><![CDATA[getBoardName
-]]></system-out>
-  </testcase>
-  <testcase name="testAddColumn" classname="com.gordon.model.board.BoardTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.BoardTest.testAddColumn(BoardTest.java:103)
-</failure>
-    <system-out><![CDATA[addColumn
-]]></system-out>
-  </testcase>
-  <testcase name="testMoveTaskToSameColums" classname="com.gordon.model.board.BoardTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.BoardTest.testMoveTaskToSameColums(BoardTest.java:81)
-</failure>
-    <system-out><![CDATA[moveTask
-]]></system-out>
-  </testcase>
-  <testcase name="testMoveTask" classname="com.gordon.model.board.BoardTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.BoardTest.testMoveTask(BoardTest.java:69)
-</failure>
-    <system-out><![CDATA[moveTask
-]]></system-out>
-  </testcase>
-  <testcase name="testSetBoardName" classname="com.gordon.model.board.BoardTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.BoardTest.testSetBoardName(BoardTest.java:139)
-</failure>
-    <system-out><![CDATA[setBoardName
-]]></system-out>
-  </testcase>
-  <testcase name="testMoveTaskToNonExsistentColumn" classname="com.gordon.model.board.BoardTest" time="0.001">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.BoardTest.testMoveTaskToNonExsistentColumn(BoardTest.java:87)
-</failure>
-    <system-out><![CDATA[moveTask
-]]></system-out>
-  </testcase>
-  <testcase name="testGetColumns" classname="com.gordon.model.board.BoardTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.BoardTest.testGetColumns(BoardTest.java:121)
-</failure>
-    <system-out><![CDATA[getColumns
-]]></system-out>
-  </testcase>
-  <testcase name="testIsEmpty" classname="com.gordon.model.board.BoardTest" time="0.001">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.BoardTest.testIsEmpty(BoardTest.java:112)
-</failure>
-    <system-out><![CDATA[isEmpty
-]]></system-out>
-  </testcase>
+  <testcase name="testAddTask" classname="com.gordon.model.board.BoardTest" time="0.011"/>
+  <testcase name="testAddColumn" classname="com.gordon.model.board.BoardTest" time="0.001"/>
+  <testcase name="testMoveTaskToTheSameColumn" classname="com.gordon.model.board.BoardTest" time="0"/>
+  <testcase name="testMoveTask" classname="com.gordon.model.board.BoardTest" time="0"/>
+  <testcase name="testMoveTaskToNonExsistentColumn" classname="com.gordon.model.board.BoardTest" time="0"/>
+  <testcase name="testIsEmpty" classname="com.gordon.model.board.BoardTest" time="0.001"/>
   <testcase name="testAddTaskAlreadyInCollumn" classname="com.gordon.model.board.BoardTest" time="0.001"/>
 </testsuite>

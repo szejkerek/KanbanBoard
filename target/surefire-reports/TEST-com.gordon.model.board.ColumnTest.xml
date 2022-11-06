@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.gordon.model.board.ColumnTest" time="0.001" tests="7" errors="0" skipped="0" failures="7">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.gordon.model.board.ColumnTest" time="0" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="17.0.4.1+1-LTS-2"/>
@@ -62,53 +62,7 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testGetTasks" classname="com.gordon.model.board.ColumnTest" time="0.001">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.ColumnTest.testGetTasks(ColumnTest.java:78)
-</failure>
-    <system-out><![CDATA[getTasks
-]]></system-out>
-  </testcase>
-  <testcase name="testAddTaskNullTask" classname="com.gordon.model.board.ColumnTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.ColumnTest.testAddTaskNullTask(ColumnTest.java:69)
-</failure>
-    <system-out><![CDATA[addTask
-]]></system-out>
-  </testcase>
-  <testcase name="testAddTask" classname="com.gordon.model.board.ColumnTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.ColumnTest.testAddTask(ColumnTest.java:63)
-</failure>
-    <system-out><![CDATA[addTask
-]]></system-out>
-  </testcase>
-  <testcase name="testGetColumnName" classname="com.gordon.model.board.ColumnTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.ColumnTest.testGetColumnName(ColumnTest.java:45)
-</failure>
-    <system-out><![CDATA[getColumnName
-]]></system-out>
-  </testcase>
-  <testcase name="testRemoveNullTask" classname="com.gordon.model.board.ColumnTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.ColumnTest.testRemoveNullTask(ColumnTest.java:36)
-</failure>
-    <system-out><![CDATA[removeTask
-]]></system-out>
-  </testcase>
-  <testcase name="testSetColumnName" classname="com.gordon.model.board.ColumnTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.ColumnTest.testSetColumnName(ColumnTest.java:54)
-</failure>
-    <system-out><![CDATA[setColumnName
-]]></system-out>
-  </testcase>
-  <testcase name="testRemoveTask" classname="com.gordon.model.board.ColumnTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.ColumnTest.testRemoveTask(ColumnTest.java:27)
-</failure>
-    <system-out><![CDATA[removeTask
-]]></system-out>
-  </testcase>
+  <testcase name="testAddTask" classname="com.gordon.model.board.ColumnTest" time="0"/>
+  <testcase name="testRemoveTaskNotInColumn" classname="com.gordon.model.board.ColumnTest" time="0"/>
+  <testcase name="testRemoveTask" classname="com.gordon.model.board.ColumnTest" time="0"/>
 </testsuite>
