@@ -111,7 +111,7 @@ public class BoardController {
     /**
      * Wrapper for creating new board.
      *
-     * @param name Name of the new board...
+     * @param name Name of the new board.
      */
     public void createNewBoard(String name) {
         board = new Board(name);
