@@ -62,12 +62,12 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testHasContent" classname="com.gordon.model.board.BoardTest" time="0.012"/>
-  <testcase name="testAddTask" classname="com.gordon.model.board.BoardTest" time="0"/>
+  <testcase name="testHasContent" classname="com.gordon.model.board.BoardTest" time="0.014"/>
+  <testcase name="testAddTask" classname="com.gordon.model.board.BoardTest" time="0.001"/>
   <testcase name="testAddColumn" classname="com.gordon.model.board.BoardTest" time="0.001"/>
   <testcase name="testMoveTaskToTheSameColumn" classname="com.gordon.model.board.BoardTest" time="0"/>
   <testcase name="testMoveTask" classname="com.gordon.model.board.BoardTest" time="0"/>
   <testcase name="testMoveTaskToNonExsistentColumn" classname="com.gordon.model.board.BoardTest" time="0"/>
-  <testcase name="testIsEmpty" classname="com.gordon.model.board.BoardTest" time="0.001"/>
+  <testcase name="testIsEmpty" classname="com.gordon.model.board.BoardTest" time="0"/>
   <testcase name="testAddTaskAlreadyInCollumn" classname="com.gordon.model.board.BoardTest" time="0.001"/>
 </testsuite>
