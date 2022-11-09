@@ -1,0 +1,4 @@
+--patch-module
+com.gordon.kanbanboard=_
+--add-reads
+com.gordon.kanbanboard=ALL-UNNAMED
