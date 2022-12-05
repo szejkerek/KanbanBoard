@@ -6,24 +6,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gordon.kanbanboard.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gordon.kanbanboard.LoginController">
    <children>
-      <Label layoutX="188.0" layoutY="88.0" prefHeight="63.0" prefWidth="222.0" text="TYPE YOUR USER NAME:">
+      <Label layoutX="531.0" layoutY="252.0" prefHeight="63.0" prefWidth="222.0" text="TYPE YOUR USER NAME:">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="usernameTextField" alignment="CENTER" layoutX="167.0" layoutY="175.0" prefHeight="50.0" prefWidth="260.0">
+      <TextField fx:id="usernameTextField" alignment="CENTER" layoutX="510.0" layoutY="339.0" prefHeight="50.0" prefWidth="260.0">
          <font>
             <Font size="19.0" />
          </font>
       </TextField>
-      <Button fx:id="loginButton" layoutX="255.0" layoutY="264.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="42.0" prefWidth="83.0" text="LOGIN" textAlignment="CENTER">
+      <Button fx:id="loginButton" layoutX="598.0" layoutY="428.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="42.0" prefWidth="83.0" text="LOGIN" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="10.0" />
          </font>
       </Button>
-      <Label fx:id="warning" alignment="CENTER" layoutX="103.0" layoutY="146.0" prefHeight="25.0" prefWidth="402.0" textFill="RED" visible="false">
+      <Label fx:id="warning" alignment="CENTER" layoutX="446.0" layoutY="310.0" prefHeight="25.0" prefWidth="402.0" textFill="RED" visible="false">
          <font>
             <Font size="15.0" />
          </font>

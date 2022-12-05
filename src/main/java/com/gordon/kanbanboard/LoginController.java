@@ -1,16 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package com.gordon.kanbanboard;
 
 import com.gordon.model.User;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -30,8 +30,13 @@ public class LoginController {
 
     @FXML
     private void buttonClicked(ActionEvent event) throws IOException {
-        if (!getUserNameFromInput()) {
-            App.setRoot("Board");
+        if (getUserNameFromInput()) {
+            FXMLLoader loader = new FXMLLoader(App.class.getResource("Board" + ".fxml"));
+            Parent parent = loader.load();
+            
+            BoardController boardController = loader.getController();
+            boardController.setTitle(_user.getUserName());
+            App.scene.setRoot(parent);
         }
     }
 
@@ -40,7 +45,7 @@ public class LoginController {
 
         userName = usernameTextField.getText();
 
-        if (validateName(userName)) {
+        if (!validateName(userName)) {
             usernameTextField.clear();
             return false;
         }

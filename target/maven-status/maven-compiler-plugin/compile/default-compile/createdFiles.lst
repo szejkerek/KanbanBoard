@@ -1,5 +1,4 @@
 com\gordon\model\CommandLineArguments.class
-com\gordon\model\board\Task.class
 com\gordon\model\board\Board.class
 com\gordon\model\board\Column.class
 com\gordon\kanbanboard\App.class
