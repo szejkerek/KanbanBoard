@@ -1,6 +1,5 @@
 package com.gordon.model.board;
 
-import com.gordon.kanbanboard.Task;
 import java.util.ArrayList;
 import java.util.List;
 

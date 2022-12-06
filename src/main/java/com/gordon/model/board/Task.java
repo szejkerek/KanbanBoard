@@ -1,4 +1,4 @@
-package com.gordon.kanbanboard;
+package com.gordon.model.board;
 
 import com.gordon.model.User;
 

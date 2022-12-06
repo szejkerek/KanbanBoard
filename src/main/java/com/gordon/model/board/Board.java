@@ -1,6 +1,5 @@
 package com.gordon.model.board;
 
-import com.gordon.kanbanboard.Task;
 import com.gordon.model.ItemAlreadyExistsException;
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,5 @@
 package com.gordon.model.board;
 
-import com.gordon.kanbanboard.Task;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
