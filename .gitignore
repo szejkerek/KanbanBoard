@@ -25,3 +25,4 @@ hs_err_pid*
 /target/javadoc-bundle-options/*
 /target/maven-javadoc-plugin-stale-data.txt
 /nbproject/
+/target/

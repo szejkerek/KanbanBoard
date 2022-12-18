@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <script type="text/javascript" src="js/ajax.js"></script>
+        <link rel="stylesheet" href="css/main.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        
+        <h1>Column: ToDo</h1>
+        <table>
+            <thead>                
+                <tr>
+                    <th>Task title</th>
+                    <th>Task content</th>                
+                </tr>
+            </thead>            
+            <tbody id="tablePersons">
+            </tbody>            
+        </table>
+         
+        <br>
+            <input type="text" id="arg1" name="arg1" />
+            <input type="text" id="arg2" name="arg2" />
+            <input type="text" id="arg3" name="arg3" />
+        </br>
+        
+        <input type="text" id="firstName" name="firstName" />         
+        <input type="button" id="test" value="Show" onClick="getTable('firstName', 'tablePersons');" />
+        <input type="button" id="taskGetter" value="SubmitTask" onClick="getTask('arg1','arg2','arg3');" />
+
+        
+    </body>
+</html>
