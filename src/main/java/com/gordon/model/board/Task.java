@@ -1,31 +1,36 @@
 package com.gordon.model.board;
 
 import com.gordon.model.User;
-import com.gordon.model.board.enums.TaskPriority;
 
 /**
- * Class implementing the task. 
- * 
+ * Class implementing the task.
+ *
  * @author Bartłomiej Gordon - bartgor628@student.polsl.pl
  * @version 1.1
  */
-
 public class Task {
 
     /**
      * Task name.
      */
-    private String taskName = "";
-    
-     /**
-     * Task priority.
-     */
-    private TaskPriority taskPriority = TaskPriority.Lowest;
-
+    protected String taskName = "";
     /**
      * Content of the task.
      */
-    private String content = "";
+    protected String taskContent = "";
+
+    public String getTaskContent() {
+        return taskContent;
+    }
+
+    public void setTaskContent(String taskContent) {
+        this.taskContent = taskContent;
+    }
+
+    /**
+     * Task priority.
+     */
+    protected Integer taskPriority = 0;
 
     /**
      * Author of the task.
@@ -42,14 +47,20 @@ public class Task {
     }
 
     /**
-     * Constructor for task specifying its name and initial content.
+     * Constructor for task specifying its name and initial taskDescription.
      *
      * @param _taskName Task name.
-     * @param initialContent Initial content.
+     * @param initialContent Initial taskDescription.
      */
     public Task(String _taskName, String initialContent) {
         taskName = _taskName;
-        content = initialContent;
+        taskContent = initialContent;
+    }
+
+    public Task(String _taskName, String _taskContent, Integer priority) {
+        taskName = _taskName;
+        taskContent = _taskContent;
+        taskPriority = priority;
     }
 
     /**
@@ -59,7 +70,7 @@ public class Task {
      */
     public Task(Task _task) {
         taskName = _task.getTaskName();
-        content = _task.getContent();
+        taskContent = _task.getContent();
     }
 
     /**
@@ -99,47 +110,34 @@ public class Task {
     }
 
     /**
-     * Setter for tasks content.
+     * Setter for tasks taskDescription.
      *
-     * @param content Task content.
+     * @param content Task taskDescription.
      */
     public void setContent(String content) {
-        this.content = content;
+        this.taskContent = content;
     }
 
     /**
-     * Getter for task content.
+     * Getter for task taskDescription.
      *
-     * @return Task content.
+     * @return Task taskDescription.
      */
     public String getContent() {
-        return content;
+        return taskContent;
+    }
+
+    public Integer getTaskPriority() {
+        return taskPriority;
     }
 
     /**
-     * Function that checks if task has any content.
-     * @return True if task has content, false otherwise.
+     * Function that checks if task has any taskDescription.
+     *
+     * @return True if task has taskDescription, false otherwise.
      */
     public Boolean hasContent() {
-        return !content.equals("");
-    }
-    
-     /**
-     * Setter for task priority.
-     *
-     * @param _taskPriority Task content.
-     */
-    public void setTaskPriority(TaskPriority _taskPriority) {
-        taskPriority = _taskPriority;
-    }
-
-    /**
-     * Getter for task priority.
-     *
-     * @return Task priority.
-     */
-    public TaskPriority getTaskPriority() {
-        return taskPriority;
+        return !taskContent.equals("");
     }
 
 }

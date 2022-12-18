@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.gordon.model.board.TaskTest" time="0.001" tests="7" errors="0" skipped="0" failures="7">
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="0" failures="0" name="com.gordon.model.board.TaskTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="17.0.4.1+1-LTS-2"/>
@@ -15,14 +15,15 @@
     <property name="user.script" value=""/>
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="test" value="com.gordon.model.**.*Test"/>
+    <property name="test" value="${packageClassName}"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="D:\Projekty\KanbanBoard"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="17.0.4.1+1-LTS-2"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.io.tmpdir" value="C:\Users\Bartek\AppData\Local\Temp\"/>
-    <property name="line.separator" value="&#10;"/>
+    <property name="line.separator" value="
+"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
@@ -45,7 +46,7 @@
     <property name="java.class.path" value="D:\Programy\NetBeans\NetBeans-15\netbeans\java\maven\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="17"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=com.gordon.model.**.*Test -Dmaven.ext.class.path=D:\Programy\NetBeans\NetBeans-15\netbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=${packageClassName} -Dmaven.ext.class.path=D:\Programy\NetBeans\NetBeans-15\netbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-17.0.4.1"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -62,53 +63,4 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testHasContent" classname="com.gordon.model.board.TaskTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.TaskTest.testHasContent(TaskTest.java:76)
-</failure>
-    <system-out><![CDATA[hasContent
-]]></system-out>
-  </testcase>
-  <testcase name="testSetContent" classname="com.gordon.model.board.TaskTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.TaskTest.testSetContent(TaskTest.java:58)
-</failure>
-    <system-out><![CDATA[setContent
-]]></system-out>
-  </testcase>
-  <testcase name="testSetAuthor" classname="com.gordon.model.board.TaskTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.TaskTest.testSetAuthor(TaskTest.java:31)
-</failure>
-    <system-out><![CDATA[setAuthor
-]]></system-out>
-  </testcase>
-  <testcase name="testSetTaskName" classname="com.gordon.model.board.TaskTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.TaskTest.testSetTaskName(TaskTest.java:49)
-</failure>
-    <system-out><![CDATA[setTaskName
-]]></system-out>
-  </testcase>
-  <testcase name="testGetAuthor" classname="com.gordon.model.board.TaskTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.TaskTest.testGetAuthor(TaskTest.java:22)
-</failure>
-    <system-out><![CDATA[getAuthor
-]]></system-out>
-  </testcase>
-  <testcase name="testGetTaskName" classname="com.gordon.model.board.TaskTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.TaskTest.testGetTaskName(TaskTest.java:40)
-</failure>
-    <system-out><![CDATA[getTaskName
-]]></system-out>
-  </testcase>
-  <testcase name="testGetContent" classname="com.gordon.model.board.TaskTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at com.gordon.model.board.TaskTest.testGetContent(TaskTest.java:67)
-</failure>
-    <system-out><![CDATA[getContent
-]]></system-out>
-  </testcase>
 </testsuite>

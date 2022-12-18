@@ -15,7 +15,6 @@
     <property name="user.script" value=""/>
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="test" value="com.gordon.model.**.*Test"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="D:\Projekty\KanbanBoard"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
@@ -45,7 +44,7 @@
     <property name="java.class.path" value="D:\Programy\NetBeans\NetBeans-15\netbeans\java\maven\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="17"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=com.gordon.model.**.*Test -Dmaven.ext.class.path=D:\Programy\NetBeans\NetBeans-15\netbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=D:\Programy\NetBeans\NetBeans-15\netbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 test"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-17.0.4.1"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -70,9 +69,9 @@
 ]]></system-out>
   </testcase>
   <testcase name="testHasGotNoneUserName" classname="com.gordon.model.CommandLineArgumentsTest" time="0"/>
-  <testcase name="testHasGotUserName" classname="com.gordon.model.CommandLineArgumentsTest" time="0.001"/>
+  <testcase name="testHasGotUserName" classname="com.gordon.model.CommandLineArgumentsTest" time="0"/>
   <testcase name="testHasGotBoardName" classname="com.gordon.model.CommandLineArgumentsTest" time="0"/>
-  <testcase name="testGetBoardName" classname="com.gordon.model.CommandLineArgumentsTest" time="0.001">
+  <testcase name="testGetBoardName" classname="com.gordon.model.CommandLineArgumentsTest" time="0">
     <failure message="expected: &lt;board&gt; but was: &lt; board&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <board> but was: < board>
 	at com.gordon.model.CommandLineArgumentsTest.testGetBoardName(CommandLineArgumentsTest.java:53)
 ]]></failure>
@@ -80,14 +79,14 @@
 ]]></system-out>
   </testcase>
   <testcase name="testHasGotNoneBoardName" classname="com.gordon.model.CommandLineArgumentsTest" time="0"/>
-  <testcase name="testProcessArgumentsSetBoardName" classname="com.gordon.model.CommandLineArgumentsTest" time="0">
+  <testcase name="testProcessArgumentsSetBoardName" classname="com.gordon.model.CommandLineArgumentsTest" time="0.001">
     <failure message="expected: &lt;board&gt; but was: &lt; board&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <board> but was: < board>
 	at com.gordon.model.CommandLineArgumentsTest.testProcessArgumentsSetBoardName(CommandLineArgumentsTest.java:38)
 ]]></failure>
     <system-out><![CDATA[testProcessArgumentsSetBoardName
 ]]></system-out>
   </testcase>
-  <testcase name="testGetUserName" classname="com.gordon.model.CommandLineArgumentsTest" time="0.001">
+  <testcase name="testGetUserName" classname="com.gordon.model.CommandLineArgumentsTest" time="0">
     <failure message="expected: &lt;user&gt; but was: &lt; user&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <user> but was: < user>
 	at com.gordon.model.CommandLineArgumentsTest.testGetUserName(CommandLineArgumentsTest.java:68)
 ]]></failure>
