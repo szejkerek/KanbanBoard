@@ -20,68 +20,69 @@ import pl.polsl.lab.model.board.Task;
  */
 @WebServlet(name = "KanbanServlet", urlPatterns = {"/kanban"})
 public class KanbanServlet extends HttpServlet {
+
     @Override
     public void init() {
     }
 
-        protected void processDeleteRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-    }
-    
-    protected void processPostRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-                String _taskName = request.getParameter("taskName");
-                String _columnID = request.getParameter("destination");
-                
-        PrintWriter out = response.getWriter();
-        if(_columnID.equals("toDo"))
-        {
-            PersistentData.getInstance().toDo.addTask(new Task(_taskName," "));
-            printTasks(out, PersistentData.getInstance().toDo);
-            
-        }
-        else if(_columnID.equals("inProgress"))
-        {
-            PersistentData.getInstance().inProgress.addTask(new Task(_taskName," "));
-            printTasks(out, PersistentData.getInstance().inProgress);
-            
-        }
-        else if(_columnID.equals("done"))
-        {
-            PersistentData.getInstance().done.addTask(new Task(_taskName," "));
-            printTasks(out, PersistentData.getInstance().done);         
-        }
-
-    }
-    
     protected void processGetRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+    }
+
+    protected void processPostRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String _taskName = request.getParameter("taskName");
+        String _taskContent = request.getParameter("taskContent");
+
+        String _columnID = request.getParameter("destination");
+
+        PrintWriter out = response.getWriter();
+        if (_columnID.equals("toDo")) {
+            if (!PersistentData.getInstance().inProgress.contains(_taskName) && !PersistentData.getInstance().done.contains(_taskName)) {
+                PersistentData.getInstance().toDo.addTask(new Task(_taskName, _taskContent));
+                printTasks(out, PersistentData.getInstance().toDo);
+            }
+
+        } else if (_columnID.equals("inProgress")) {
+            if (!PersistentData.getInstance().toDo.contains(_taskName) && !PersistentData.getInstance().done.contains(_taskName)) {
+                PersistentData.getInstance().inProgress.addTask(new Task(_taskName, _taskContent));
+                printTasks(out, PersistentData.getInstance().inProgress);
+            }
+
+        } else if (_columnID.equals("done")) {
+            if (!PersistentData.getInstance().inProgress.contains(_taskName) && !PersistentData.getInstance().toDo.contains(_taskName)) {
+                PersistentData.getInstance().done.addTask(new Task(_taskName, _taskContent));
+                printTasks(out, PersistentData.getInstance().done);
+            }
+        } else {
+            out.println("<p style='color: red'>Error.</p>");
+        }
+
+    }
+
+    protected void processDeleteRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
         String _taskName = request.getParameter("taskName");
         String _columnID = request.getParameter("destination");
         PrintWriter out = response.getWriter();
-        if(_columnID.equals("toDo"))
-        {
+        if (_columnID.equals("toDo")) {
             PersistentData.getInstance().toDo.removeTask(_taskName);
             printTasks(out, PersistentData.getInstance().toDo);
-            
-        }
-        else if(_columnID.equals("inProgress"))
-        {
+
+        } else if (_columnID.equals("inProgress")) {
             PersistentData.getInstance().inProgress.removeTask(_taskName);
             printTasks(out, PersistentData.getInstance().inProgress);
-            
-        }
-        else if(_columnID.equals("done"))
-        {
+
+        } else if (_columnID.equals("done")) {
             PersistentData.getInstance().done.removeTask(_taskName);
             printTasks(out, PersistentData.getInstance().done);
-            
+
         }
-        
-        
+
     }
-    
+
     protected void processPutRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -95,15 +96,21 @@ public class KanbanServlet extends HttpServlet {
             out.println("<p style='color: red'>All fields have to be filled.</p>");
         } else {
 
-            Task task = new Task(_taskName, _taskContent);
-            PersistentData.getInstance().toDo.addTask(task);
-            try {
-                printTasks(out, PersistentData.getInstance().toDo);
+            if (!PersistentData.getInstance().toDo.contains(_taskName)) {
+                Task task = new Task(_taskName, _taskContent);
+                PersistentData.getInstance().toDo.addTask(task);
+                try {
+                    printTasks(out, PersistentData.getInstance().toDo);
 
-            } catch (Exception ex) {
-                printTasks(out, PersistentData.getInstance().toDo);
-                out.println("<p style='color: red'>All fields have to be filled.</p>");       
+                } catch (Exception ex) {
+                    printTasks(out, PersistentData.getInstance().toDo);
+                    out.println("<p style='color: red'>All fields have to be filled.</p>");
+                }
+            } else {
+                    printTasks(out, PersistentData.getInstance().toDo);
+                    out.println("<p style='color: red'>You can't add same task twice!.</p>");
             }
+
         }
 
     }
@@ -111,38 +118,36 @@ public class KanbanServlet extends HttpServlet {
     void printTasks(PrintWriter out, Column column) {
         for (var temp : column.getTasks()) {
             out.println("<tr>");
-            
+
             out.println("<td>");
             out.println(temp.getTaskName());
             out.println("</td>");
-            
+
             out.println("<td>");
             out.println(temp.getContent());
             out.println("</td>");
-            
-            if(column.getColumnName().equals("toDo"))
-            {
+
+            if (column.getColumnName().equals("toDo")) {
                 out.println("<td>");
                 out.println("<input type=\"button\" id=\"removeBtn\" value=\"Remove\" onClick=\"removeTask(\'" + temp.getTaskName() + "\', 'toDo');\">");
-                out.println("<input type=\"button\" id=\"moveRight\" value=\"Move Right\" onClick=\"removeTask(\'" + temp.getTaskName() + "\', 'toDo'); insertTask(\'" + temp.getTaskName() + "\', 'inProgress'); \">");
+                out.println("<input type=\"button\" id=\"moveRight\" value=\"Move Right\" onClick=\"removeTask(\'" + temp.getTaskName() + "\', 'toDo'); insertTask(\'" + temp.getTaskName() + "\',\'" + temp.getTaskContent() + "\', 'inProgress'); \">");
                 out.println("</td>");
-                
-            }
-            else if(column.getColumnName().equals("inProgress"))
-            {
+
+            } else if (column.getColumnName().equals("inProgress")) {
                 out.println("<td>");
                 out.println("<input type=\"button\" id=\"removeBtn\" value=\"Remove\" onClick=\"removeTask(\'" + temp.getTaskName() + "\', 'inProgress');\">");
+                out.println("<input type=\"button\" id=\"moveRight\" value=\"Move Right\" onClick=\"removeTask(\'" + temp.getTaskName() + "\', 'inProgress'); insertTask(\'" + temp.getTaskName() + "\',\'" + temp.getTaskContent() + "\', 'done'); \">");
+                out.println("<input type=\"button\" id=\"moveLeft\" value=\"Move Left\" onClick=\"removeTask(\'" + temp.getTaskName() + "\', 'inProgress'); insertTask(\'" + temp.getTaskName() + "\',\'" + temp.getTaskContent() + "\', 'toDo'); \">");
                 out.println("</td>");
-                
-            }
-            else if(column.getColumnName().equals("done"))
-            {
+
+            } else if (column.getColumnName().equals("done")) {
                 out.println("<td>");
                 out.println("<input type=\"button\" id=\"removeBtn\" value=\"Remove\" onClick=\"removeTask(\'" + temp.getTaskName() + "\', 'done');\">");
+                out.println("<input type=\"button\" id=\"moveLeft\" value=\"Move Left\" onClick=\"removeTask(\'" + temp.getTaskName() + "\', 'done'); insertTask(\'" + temp.getTaskName() + "\',\'" + temp.getTaskContent() + "\', 'inProgress'); \">");
                 out.println("</td>");
-                
+
             }
-            
+
             out.println("</tr>");
         }
     }
@@ -181,15 +186,13 @@ public class KanbanServlet extends HttpServlet {
             throws ServletException, IOException {
         processDeleteRequest(request, response);
     }
-    
+
     @Override
     protected void doPut(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processPutRequest(request, response);
     }
-    
-    
-    
+
     /**
      * Returns a short description of the servlet.
      *

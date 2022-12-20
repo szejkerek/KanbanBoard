@@ -15,6 +15,19 @@ function addNewTask(destination) {
   xhttp.send();
 }
 
+function insertTask(taskName, taskContent, destination) {
+  var xhttp = new XMLHttpRequest();
+  
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        document.getElementById(destination).innerHTML = this.responseText;
+    }
+  };
+  
+  xhttp.open("POST", "kanban?taskName=" + taskName+ "&taskContent=" + taskContent + "&destination=" + destination, true);
+  xhttp.send();
+}
+
 function removeTask(taskName, destination) {
   var xhttp = new XMLHttpRequest();
   
@@ -24,19 +37,6 @@ function removeTask(taskName, destination) {
     }
   };
   
-  xhttp.open("GET", "kanban?taskName=" + taskName + "&destination=" + destination, true);
-  xhttp.send();
-}
-
-function insertTask(taskName, destination) {
-  var xhttp = new XMLHttpRequest();
-  
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        document.getElementById(destination).innerHTML = this.responseText;
-    }
-  };
-  
-  xhttp.open("POST", "kanban?taskName=" + taskName + "&destination=" + destination, true);
+  xhttp.open("DELETE", "kanban?taskName=" + taskName + "&destination=" + destination, true);
   xhttp.send();
 }

@@ -31,6 +31,18 @@ public class Column {
         tasks = new ArrayList<Task>(0);
     }
 
+    public Boolean contains(String taskName)
+    {
+        for(var task : tasks)
+        {
+            if(taskName.equals(task.getTaskName()))
+            {
+               return true;
+            }
+        }
+        return false;
+    }
+    
     /**
      * Remove task from list.
      *
