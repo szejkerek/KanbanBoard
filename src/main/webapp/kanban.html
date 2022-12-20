@@ -68,11 +68,26 @@
         </div>  
         
         <div id="third-part">
-        <div class="text">
-            “You could not live with your own failure. Where did that bring you? Back to me. I thought by eliminating half of life, the other half would thrive, but you have shown me... that's impossible. And as long as there are those that remember what was, there will always be those, that are unable to accept what can be. They will resist...I'm thankful. Because now I know what I must do. I will shred this universe down to its last atom and then, with the Stones you've collected for me, create a new one. Teeming with life. That knows not what it has lost, but only what it has been given. A grateful universe.”        </div>
-        <div class="author">
-            - purple cosmic Alpaca
-        </div>
+            <div class="text">
+                <fieldset>
+            <legend>Task Creator</legend>
+            <div class="form-control">
+              <label for="name">TaskName</label>
+              <input type="name" id="taskName" placeholder="Enter task name" required />
+            </div>
+
+            <div class="form-control">
+              <label for="message">Message</label>
+              <textarea
+                id="taskContent"
+                cols="30"
+                rows="10"
+                placeholder="Enter task content"
+                required
+              ></textarea>
+            </div>
+            <input type="submit" value="Sumbit task" class="submit-btn" />
+          </fieldset>
     </div>
         
     </body>

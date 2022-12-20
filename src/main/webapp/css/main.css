@@ -62,13 +62,13 @@ body{
     box-shadow: rgb(98, 98, 98) 1px 1px;
 }
 
+
 .logo-text{
     font-weight: bold;
     color: white;
     font-size: 30px;
     font-family: 'Roboto', sans-serif;
 }
-
 
 .right-links ul{
     display: flex;
@@ -79,6 +79,7 @@ body{
     font-family: 'Roboto', sans-serif;
     
 }
+
 
 .paragraph{
     display: flex;
@@ -103,12 +104,13 @@ body{
     font-family: sans-serif;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    table-layout: fixed; width: 85%
+    table-layout: fixed; width: 85%;
+    font-family: 'Roboto', sans-serif;
 }
 
 .styled-table thead tr {
-    background-color: #009879;
-    color: black;
+    background-color: #314561;
+    color: white;
     text-align: left;
 }
 
@@ -151,7 +153,7 @@ body{
     line-height: 46px;
 }
 
-#third-part .author{
+#third-part .submitButton{
 
     font-family: 'Open Sans';
 
@@ -161,3 +163,26 @@ body{
     text-align: right;
     
 }
+
+ input,
+    textarea {
+    width: 100%;
+    padding: 5px;
+    outline: none;
+    resize: none;
+  }
+
+  label {
+    line-height: 1.9rem;
+  }
+
+  input[type="submit"] {
+   transform: translate(2.2%);
+   padding: 3px;
+   margin-top: 0.6rem;
+   font-weight: bold;
+  }
+
+ fieldset {
+   padding: 20px 40px;
+ }
