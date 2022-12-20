@@ -2,9 +2,10 @@
 <html>
     <head>
         <title>Start Page</title>
-        <script type="text/javascript" src="js/ajax.js"></script>
         <link rel="stylesheet" href="css/main.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <script type="text/javascript" src="js/ajax.js"></script>
     </head>
     <body>
     <div class="header-top">
@@ -29,7 +30,8 @@
                     <thead>                
                         <tr>
                             <th>Task title</th>
-                            <th>Task content</th>                
+                            <th>Task content</th>   
+                            <th></th>   
                         </tr>
                     </thead>           
                     <tbody id="toDo">
@@ -86,7 +88,7 @@
                 required
               ></textarea>
             </div>
-            <input type="submit" value="Sumbit task" class="submit-btn" />
+            <input type="submit" value="Sumbit task" class="submit-btn" onClick="addNewTask('toDo');"/>
           </fieldset>
     </div>
         

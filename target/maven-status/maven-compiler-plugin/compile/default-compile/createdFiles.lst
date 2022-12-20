@@ -7,8 +7,10 @@ pl\pols\lab\services\SimpleCalculatorServlet.class
 pl\polsl\lab\model\board\Board.class
 pl\polsl\lab\model\Persons.class
 pl\polsl\lab\model\Calculator.class
+pl\pols\lab\services\KanbanServlet.class
 pl\polsl\lab\model\board\Task.class
 pl\polsl\lab\model\package-info.class
+pl\pols\lab\services\PersistentData.class
 pl\polsl\lab\model\board\package-info.class
 pl\pols\lab\services\PersonsServlet.class
 pl\polsl\lab\model\ItemAlreadyExistsException.class

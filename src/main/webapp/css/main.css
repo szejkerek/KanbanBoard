@@ -186,3 +186,9 @@ body{
  fieldset {
    padding: 20px 40px;
  }
+
+
+ #tables input[type="button"]{
+    background-color: lightblue;
+    border: 1px solid blue;
+  }

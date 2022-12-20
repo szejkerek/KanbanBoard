@@ -7,9 +7,11 @@ D:\Projekty\KanbanBoard\src\main\java\pl\polsl\lab\model\board\Column.java
 D:\Projekty\KanbanBoard\src\main\java\pl\polsl\lab\model\ItemAlreadyExistsException.java
 D:\Projekty\KanbanBoard\src\main\java\pl\pols\lab\services\PersonsServlet.java
 D:\Projekty\KanbanBoard\src\main\java\pl\pols\lab\services\CalculatorServlet.java
+D:\Projekty\KanbanBoard\src\main\java\pl\pols\lab\services\PersistentData.java
 D:\Projekty\KanbanBoard\src\main\java\pl\polsl\lab\model\CommandLineArguments.java
 D:\Projekty\KanbanBoard\src\main\java\pl\polsl\lab\model\package-info.java
 D:\Projekty\KanbanBoard\src\main\java\pl\polsl\lab\model\Calculator.java
 D:\Projekty\KanbanBoard\src\main\java\pl\polsl\lab\model\Person.java
 D:\Projekty\KanbanBoard\src\main\java\pl\polsl\lab\model\board\package-info.java
 D:\Projekty\KanbanBoard\src\main\java\pl\polsl\lab\model\board\Task.java
+D:\Projekty\KanbanBoard\src\main\java\pl\pols\lab\services\KanbanServlet.java

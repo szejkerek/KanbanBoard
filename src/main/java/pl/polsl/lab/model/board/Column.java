@@ -39,6 +39,16 @@ public class Column {
     public void removeTask(Task task) {
         tasks.remove(task);
     }
+    
+    public void removeTask(String taskName) {
+        for(var task : tasks)
+        {
+            if(taskName.equals(task.getTaskName()))
+            {
+                removeTask(task);
+            }
+        }
+    }
 
     /**
      * Getter for column name.

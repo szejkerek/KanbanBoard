@@ -1,48 +1,29 @@
 
-function getResult(arg1, arg2, result) {
+function addNewTask(destination) {
   var xhttp = new XMLHttpRequest();
   
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        document.getElementById(result).innerHTML = this.responseText;
+        document.getElementById(destination).innerHTML = this.responseText;
     }
   };
   
-  var ar1 = document.getElementById(arg1).value;
-  var ar2 = document.getElementById(arg2).value;
+  var _taskName = document.getElementById("taskName").value;
+  var _taskContent = document.getElementById("taskContent").value;
   
-  xhttp.open("GET", "simplecalculator?arg1=" + ar1 + "&arg2=" + ar2, true);
+  xhttp.open("POST", "kanban?taskName=" + _taskName + "&taskContent=" + _taskContent, true);
   xhttp.send();
 }
 
-function getTask(arg1, arg2, arg3, result) {
+function removeTask(taskName, columnID) {
   var xhttp = new XMLHttpRequest();
   
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        document.getElementById(result).innerHTML = this.responseText;
+        document.getElementById(columnID).innerHTML = this.responseText;
     }
   };
   
-  var ar1 = document.getElementById(arg1).value;
-  var ar2 = document.getElementById(arg2).value;
-  var ar2 = document.getElementById(arg3).value;
-
-  Console.log(ar1);
-  
-  
-  xhttp.open("GET", "persons?arg1=" + ar1 + "&arg2=" + ar2 + "&arg3=" + ar3, true);
-  xhttp.send();
-}
-
-function getTable(firstName, tableId) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     document.getElementById(tableId).innerHTML = this.responseText;
-    }
-  };
-  
-  xhttp.open("GET", "persons?firstName="+document.getElementById(firstName).value, true);
+  xhttp.open("DELETE", "kanban?taskName=" + taskName + "&columnID=" + columnID, true);
   xhttp.send();
 }
