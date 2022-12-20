@@ -4,26 +4,26 @@
         <title>Start Page</title>
         <link rel="stylesheet" href="css/main.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+
         <script type="text/javascript" src="js/ajax.js"></script>
     </head>
     <body>
-    <div class="header-top">
-        <div class="logo">
-            <span class="logo-text">Kanban board</span>
+        <div class="header-top">
+            <div class="logo">
+                <span class="logo-text">Kanban board</span>
+            </div>
+
+            <div class="right-links">
+                <ul>             
+                    <li class="list-element"><a href="/KanbanBoard">Home Page</a></li>
+                    <li class="list-element"><a href="https://github.com/szejkerek">GitHub</a></li>
+
+                </ul>
+            </div>
         </div>
-        
-        <div class="right-links">
-            <ul>             
-                <li class="list-element"><a href="/KanbanBoard">Home Page</a></li>
-                <li class="list-element"><a href="https://github.com/szejkerek">GitHub</a></li>
-                
-            </ul>
-        </div>
-    </div>
-        
+
         <div class ="tables">
-            
+
             <div class="table">
                 <p class="paragraph">To Do</p>
                 <table class ="styled-table">
@@ -38,7 +38,7 @@
                     </tbody>            
                 </table>
             </div>
-            
+
             <div class="table">
                 <p class="paragraph">In Progress</p>
                 <table class ="styled-table">
@@ -53,10 +53,10 @@
                     </tbody>            
                 </table>
             </div>
-            
+
             <div class="table">
                 <p class="paragraph">Done</p>
-               <table class ="styled-table">
+                <table class ="styled-table">
                     <thead>                
                         <tr>
                             <th>Task title</th>
@@ -68,31 +68,31 @@
                     </tbody>            
                 </table>
             </div>
-            
+
         </div>  
-        
+
         <div id="third-part">
             <div class="text">
                 <fieldset>
-            <legend>Task Creator</legend>
-            <div class="form-control">
-              <label for="name">TaskName</label>
-              <input type="name" id="taskName" placeholder="Enter task name" required />
+                    <legend>Task Creator</legend>
+                    <div class="form-control">
+                        <label for="name">TaskName</label>
+                        <input type="name" id="taskName" placeholder="Enter task name" required />
+                    </div>
+
+                    <div class="form-control">
+                        <label for="message">Message</label>
+                        <textarea
+                            id="taskContent"
+                            cols="30"
+                            rows="10"
+                            placeholder="Enter task content"
+                            required
+                            ></textarea>
+                    </div>
+                    <input type="submit" value="Sumbit task" class="submit-btn" onClick="addNewTask('toDo');"/>
+                </fieldset>
             </div>
 
-            <div class="form-control">
-              <label for="message">Message</label>
-              <textarea
-                id="taskContent"
-                cols="30"
-                rows="10"
-                placeholder="Enter task content"
-                required
-              ></textarea>
-            </div>
-            <input type="submit" value="Sumbit task" class="submit-btn" onClick="addNewTask('toDo');"/>
-          </fieldset>
-    </div>
-        
     </body>
 </html>
