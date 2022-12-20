@@ -24,26 +24,65 @@ public class KanbanServlet extends HttpServlet {
     public void init() {
     }
 
-    protected void processGetRequest(HttpServletRequest request, HttpServletResponse response)
+        protected void processDeleteRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
     }
     
-    protected void processDeleteRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processPostRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+                String _taskName = request.getParameter("taskName");
+                String _columnID = request.getParameter("destination");
+                
+        PrintWriter out = response.getWriter();
+        if(_columnID.equals("toDo"))
+        {
+            PersistentData.getInstance().toDo.addTask(new Task(_taskName," "));
+            printTasks(out, PersistentData.getInstance().toDo);
+            
+        }
+        else if(_columnID.equals("inProgress"))
+        {
+            PersistentData.getInstance().inProgress.addTask(new Task(_taskName," "));
+            printTasks(out, PersistentData.getInstance().inProgress);
+            
+        }
+        else if(_columnID.equals("done"))
+        {
+            PersistentData.getInstance().done.addTask(new Task(_taskName," "));
+            printTasks(out, PersistentData.getInstance().done);         
+        }
+
+    }
+    
+    protected void processGetRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String _taskName = request.getParameter("taskName");
-        String _columnID = request.getParameter("columnID");
+        String _columnID = request.getParameter("destination");
         PrintWriter out = response.getWriter();
         if(_columnID.equals("toDo"))
         {
             PersistentData.getInstance().toDo.removeTask(_taskName);
             printTasks(out, PersistentData.getInstance().toDo);
+            
         }
-
+        else if(_columnID.equals("inProgress"))
+        {
+            PersistentData.getInstance().inProgress.removeTask(_taskName);
+            printTasks(out, PersistentData.getInstance().inProgress);
+            
+        }
+        else if(_columnID.equals("done"))
+        {
+            PersistentData.getInstance().done.removeTask(_taskName);
+            printTasks(out, PersistentData.getInstance().done);
+            
+        }
+        
         
     }
     
-    protected void processPostRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processPutRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
@@ -85,21 +124,21 @@ public class KanbanServlet extends HttpServlet {
             {
                 out.println("<td>");
                 out.println("<input type=\"button\" id=\"removeBtn\" value=\"Remove\" onClick=\"removeTask(\'" + temp.getTaskName() + "\', 'toDo');\">");
-                out.println("<input type='button' id='moveInProgress' value='Move right'>");
+                out.println("<input type=\"button\" id=\"moveRight\" value=\"Move Right\" onClick=\"removeTask(\'" + temp.getTaskName() + "\', 'toDo'); insertTask(\'" + temp.getTaskName() + "\', 'inProgress'); \">");
                 out.println("</td>");
                 
             }
             else if(column.getColumnName().equals("inProgress"))
             {
                 out.println("<td>");
-                out.println(temp.getContent());
+                out.println("<input type=\"button\" id=\"removeBtn\" value=\"Remove\" onClick=\"removeTask(\'" + temp.getTaskName() + "\', 'inProgress');\">");
                 out.println("</td>");
                 
             }
             else if(column.getColumnName().equals("done"))
             {
                 out.println("<td>");
-                out.println(temp.getContent());
+                out.println("<input type=\"button\" id=\"removeBtn\" value=\"Remove\" onClick=\"removeTask(\'" + temp.getTaskName() + "\', 'done');\">");
                 out.println("</td>");
                 
             }
@@ -142,6 +181,14 @@ public class KanbanServlet extends HttpServlet {
             throws ServletException, IOException {
         processDeleteRequest(request, response);
     }
+    
+    @Override
+    protected void doPut(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processPutRequest(request, response);
+    }
+    
+    
     
     /**
      * Returns a short description of the servlet.
