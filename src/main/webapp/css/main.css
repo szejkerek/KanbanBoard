@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
+
+body {
+}
+
+table, td, th, tr {
+    border-collapse: collapse;
+    border: 1px black solid;
+    padding: 5px;
+}
+
+  .myButton {
+    align-self:flex-end;
+    border-radius: 20px;
+    background-color: rgb(207, 145, 82);
+    padding: 12px;
+    width: max-content;
+    border: none;
+    box-shadow: 3px 4px #171f2a;
+  }
+  
+  .container {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    
+}
+
+.header-top{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #171f2a;
+    position: sticky;
+    top: 0;
+    height: 75px;
+    gap: 50px;
+
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin:0;
+}
+
+.right-links .list-element{
+    padding: 8px;
+    box-shadow: 3px 4px #0d1218;
+    background-color: rgb(207, 145, 82, 0.9);
+    border-radius: 70px;
+    flex-shrink: 0;
+    box-shadow: rgb(98, 98, 98) 1px 1px;
+}
+
+
+.logo-text{
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.right-links ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 10px;
+    gap: 25px;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+
+.paragraph{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: black;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.tables{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;      
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    table-layout: fixed; width: 85%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.styled-table thead tr {
+    background-color: #314561;
+    color: white;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    word-wrap: break-word
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+.table{
+    display: flex;
+    flex-direction: column;
+}
+
+#third-part{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 40px;
+    align-items: center;
+    
+    background-color: #E5E7EB;
+}
+
+#third-part .text{
+    text-align: justify;
+    font-size: 22px;
+    max-width: 900px;
+    font-family: 'Open Sans';
+    line-height: 46px;
+}
+
+#third-part .submitButton{
+
+    font-family: 'Open Sans';
+
+    font-size: 26px;
+    min-width: 900px;
+    align-self: center;
+    text-align: right;
+    
+}
+
+ input,
+    textarea {
+    width: 100%;
+    padding: 5px;
+    outline: none;
+    resize: none;
+  }
+
+  label {
+    line-height: 1.9rem;
+  }
+
+  input[type="submit"] {
+   transform: translate(2.2%);
+   padding: 3px;
+   margin-top: 0.6rem;
+   font-weight: bold;
+  }
+
+ fieldset {
+   padding: 20px 40px;
+ }
