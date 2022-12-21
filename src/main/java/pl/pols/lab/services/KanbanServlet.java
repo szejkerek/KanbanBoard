@@ -97,7 +97,7 @@ public class KanbanServlet extends HttpServlet {
             out.println("<p style='color: red'>All fields have to be filled.</p>");
         } else {
 
-            if (!PersistentData.getInstance().toDo.contains(_taskName)) {
+            if (!PersistentData.getInstance().toDo.contains(_taskName) && !PersistentData.getInstance().inProgress.contains(_taskName) && !PersistentData.getInstance().done.contains(_taskName)) {
                 Task task = new Task(_taskName, _taskContent);
                 PersistentData.getInstance().toDo.addTask(task);
                 try {
