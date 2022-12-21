@@ -37,24 +37,25 @@ public class KanbanServlet extends HttpServlet {
 
         String _columnID = request.getParameter("destination");
 
+        
         PrintWriter out = response.getWriter();
         if (_columnID.equals("toDo")) {
-            if (!PersistentData.getInstance().inProgress.contains(_taskName) && !PersistentData.getInstance().done.contains(_taskName)) {
-                PersistentData.getInstance().toDo.addTask(new Task(_taskName, _taskContent));
-                printTasks(out, PersistentData.getInstance().toDo);
+            if (!PersistentData.getInstance().inProgress.contains(_taskName) && !PersistentData.getInstance().done.contains(_taskName)&& !PersistentData.getInstance().toDo.contains(_taskName)) {
+                PersistentData.getInstance().toDo.addTask(new Task(_taskName, _taskContent));               
             }
+            printTasks(out, PersistentData.getInstance().toDo);
 
         } else if (_columnID.equals("inProgress")) {
-            if (!PersistentData.getInstance().toDo.contains(_taskName) && !PersistentData.getInstance().done.contains(_taskName)) {
-                PersistentData.getInstance().inProgress.addTask(new Task(_taskName, _taskContent));
-                printTasks(out, PersistentData.getInstance().inProgress);
+            if (!PersistentData.getInstance().inProgress.contains(_taskName) && !PersistentData.getInstance().done.contains(_taskName)&& !PersistentData.getInstance().toDo.contains(_taskName)) {
+                PersistentData.getInstance().inProgress.addTask(new Task(_taskName, _taskContent));              
             }
+            printTasks(out, PersistentData.getInstance().inProgress);
 
         } else if (_columnID.equals("done")) {
-            if (!PersistentData.getInstance().inProgress.contains(_taskName) && !PersistentData.getInstance().toDo.contains(_taskName)) {
-                PersistentData.getInstance().done.addTask(new Task(_taskName, _taskContent));
-                printTasks(out, PersistentData.getInstance().done);
+            if (!PersistentData.getInstance().inProgress.contains(_taskName) && !PersistentData.getInstance().done.contains(_taskName)&& !PersistentData.getInstance().toDo.contains(_taskName)) {
+                PersistentData.getInstance().done.addTask(new Task(_taskName, _taskContent));              
             }
+            printTasks(out, PersistentData.getInstance().done);
         } else {
             out.println("<p style='color: red'>Error.</p>");
         }
