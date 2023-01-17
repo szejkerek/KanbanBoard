@@ -2,6 +2,7 @@ package pl.polsl.lab.model.board;
 
 import java.util.ArrayList;
 import java.util.List;
+import pl.pols.lab.services.PersistentData;
 
 /**
  * Class implementing the column. 
@@ -87,6 +88,10 @@ public class Column {
      */
     public void addTask(Task newTask) {
         tasks.add(newTask);
+    }
+    
+    public void addTask(String title, String description) {
+        PersistentData.getInstance().insertTask(title, description, columnName);
     }
 
     /**

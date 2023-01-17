@@ -4,14 +4,13 @@
  */
 package pl.pols.lab.services;
 
-import static jakarta.xml.ws.RespectBindingFeature.ID;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import pl.polsl.lab.model.board.Column;
-import pl.polsl.lab.model.board.Task;
 
 /**
  *
@@ -19,6 +18,7 @@ import pl.polsl.lab.model.board.Task;
  */
 public class PersistentData {
 
+    Connection con = null;
     Column toDo = new Column("toDo");
     Column inProgress = new Column("inProgress");
     Column done = new Column("done");
@@ -26,12 +26,6 @@ public class PersistentData {
     private static PersistentData INSTANCE;
 
     public PersistentData() {
-        Task task = new Task("Tas", "Content");
-        Task task2 = new Task("Task2", "Contentkhfcysvjcbvadkjbshlhifblhdk");
-
-        insertNewTask(1, task);
-        insertNewTask(2, task2);
-        selectData();
 
     }
 
@@ -55,14 +49,23 @@ public class PersistentData {
     }
 
     public void createTables() {
-
         // make a connection to DB
-        try ( Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/lab", "app", "app")) {
+        try{
+            con = DriverManager.getConnection("jdbc:derby://localhost:1527/lab", "app", "app");
             Statement statement = con.createStatement();
-            statement.executeUpdate("CREATE TABLE Dane "
-                    + "(id INTEGER, nazwisko VARCHAR(50), "
-                    + "imie VARCHAR(50), ocena FLOAT )");
-            System.out.println("Table created");
+            statement.executeUpdate("CREATE TABLE tasks"
+                    + "(id int GENERATED ALWAYS AS IDENTITY not null, "
+                    + "title VARCHAR(255), description VARCHAR(255), PRIMARY KEY(ID))");
+            statement.executeUpdate("CREATE TABLE toDo"
+                    + "(id int GENERATED ALWAYS AS IDENTITY not null, "
+                    + "task_id INT, FOREIGN KEY(task_id) REFERENCES tasks(id) ON DELETE CASCADE, PRIMARY KEY(ID))");
+            statement.executeUpdate("CREATE TABLE inProgress"
+                    + "(id int GENERATED ALWAYS AS IDENTITY not null, "
+                    + "task_id INT, FOREIGN KEY(task_id) REFERENCES tasks(id) ON DELETE CASCADE, PRIMARY KEY(ID))");
+            statement.executeUpdate("CREATE TABLE done"
+                    + "(id int GENERATED ALWAYS AS IDENTITY not null, "
+                    + "task_id INT, FOREIGN KEY(task_id) REFERENCES tasks(id) ON DELETE CASCADE, PRIMARY KEY(ID))");
+            System.out.println("Tables created");
         } catch (SQLException sqle) {
             System.err.println(sqle.getMessage());
         }
@@ -81,21 +84,37 @@ public class PersistentData {
         }
     }
 
-    public void insertNewTask(Integer ID, Task task) {
+    public void insertTask(String title, String description, String tableName) {
         // make a connection to DB
         try ( Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/lab", "app", "app")) {
-            Statement statement = con.createStatement();
-            statement.executeUpdate("INSERT INTO TASKS VALUES (" + ID + ", \'" + task.getTaskName() + "\', \'" + task.getTaskContent() + "\')");
+            PreparedStatement pstm;
+            ResultSet rs;
+            String query = "insert into tasks (title, description) values (?,?)";
+            pstm = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            pstm.setString(1, title);
+            pstm.setString(2, description);
+            pstm.executeUpdate();
+            rs = pstm.getGeneratedKeys();
+            if(rs !=null && rs.next())
+            {
+                PreparedStatement pstmToDo;
+                String queryToDo = "insert into "+tableName+" (task_id) values (?)";
+                pstmToDo = con.prepareStatement(queryToDo);
+                pstmToDo.setInt(1, rs.getInt(1));
+                pstmToDo.executeUpdate();   
+            }
+            
+            
             System.out.println("Data inserted");
         } catch (SQLException sqle) {
             System.err.println(sqle.getMessage());
         }
     }
-    
-        public void selectData() {
+
+    public void selectData() {
 
         // make a connection to DB
-        try (Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/lab", "app", "app")) {
+        try ( Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/lab", "app", "app")) {
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery("SELECT * FROM TASKS");
             // Przeglądamy otrzymane wyniki

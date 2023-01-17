@@ -23,6 +23,7 @@ public class KanbanServlet extends HttpServlet {
 
     @Override
     public void init() {
+        PersistentData.getInstance().createTables();
     }
 
     protected void processGetRequest(HttpServletRequest request, HttpServletResponse response)
@@ -37,23 +38,22 @@ public class KanbanServlet extends HttpServlet {
 
         String _columnID = request.getParameter("destination");
 
-        
         PrintWriter out = response.getWriter();
         if (_columnID.equals("toDo")) {
-            if (!PersistentData.getInstance().inProgress.contains(_taskName) && !PersistentData.getInstance().done.contains(_taskName)&& !PersistentData.getInstance().toDo.contains(_taskName)) {
-                PersistentData.getInstance().toDo.addTask(new Task(_taskName, _taskContent));               
+            if (!PersistentData.getInstance().inProgress.contains(_taskName) && !PersistentData.getInstance().done.contains(_taskName) && !PersistentData.getInstance().toDo.contains(_taskName)) {
+                PersistentData.getInstance().toDo.addTask(new Task(_taskName, _taskContent));
             }
             printTasks(out, PersistentData.getInstance().toDo);
 
         } else if (_columnID.equals("inProgress")) {
-            if (!PersistentData.getInstance().inProgress.contains(_taskName) && !PersistentData.getInstance().done.contains(_taskName)&& !PersistentData.getInstance().toDo.contains(_taskName)) {
-                PersistentData.getInstance().inProgress.addTask(new Task(_taskName, _taskContent));              
+            if (!PersistentData.getInstance().inProgress.contains(_taskName) && !PersistentData.getInstance().done.contains(_taskName) && !PersistentData.getInstance().toDo.contains(_taskName)) {
+                PersistentData.getInstance().inProgress.addTask(new Task(_taskName, _taskContent));
             }
             printTasks(out, PersistentData.getInstance().inProgress);
 
         } else if (_columnID.equals("done")) {
-            if (!PersistentData.getInstance().inProgress.contains(_taskName) && !PersistentData.getInstance().done.contains(_taskName)&& !PersistentData.getInstance().toDo.contains(_taskName)) {
-                PersistentData.getInstance().done.addTask(new Task(_taskName, _taskContent));              
+            if (!PersistentData.getInstance().inProgress.contains(_taskName) && !PersistentData.getInstance().done.contains(_taskName) && !PersistentData.getInstance().toDo.contains(_taskName)) {
+                PersistentData.getInstance().done.addTask(new Task(_taskName, _taskContent));
             }
             printTasks(out, PersistentData.getInstance().done);
         } else {
@@ -100,6 +100,7 @@ public class KanbanServlet extends HttpServlet {
             if (!PersistentData.getInstance().toDo.contains(_taskName) && !PersistentData.getInstance().inProgress.contains(_taskName) && !PersistentData.getInstance().done.contains(_taskName)) {
                 Task task = new Task(_taskName, _taskContent);
                 PersistentData.getInstance().toDo.addTask(task);
+                PersistentData.getInstance().insertTask(_taskName, _taskContent, "toDo");
                 try {
                     printTasks(out, PersistentData.getInstance().toDo);
 
@@ -108,8 +109,8 @@ public class KanbanServlet extends HttpServlet {
                     out.println("<p style='color: red'>All fields have to be filled.</p>");
                 }
             } else {
-                    printTasks(out, PersistentData.getInstance().toDo);
-                    out.println("<p style='color: red'>You can't add same task twice!.</p>");
+                printTasks(out, PersistentData.getInstance().toDo);
+                out.println("<p style='color: red'>You can't add same task twice!.</p>");
             }
 
         }
