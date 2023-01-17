@@ -10,7 +10,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import pl.polsl.lab.model.board.Column;
+import pl.polsl.lab.model.board.Task;
 
 /**
  *
@@ -50,7 +53,7 @@ public class PersistentData {
 
     public void createTables() {
         // make a connection to DB
-        try{
+        try {
             con = DriverManager.getConnection("jdbc:derby://localhost:1527/lab", "app", "app");
             Statement statement = con.createStatement();
             statement.executeUpdate("CREATE TABLE tasks"
@@ -71,13 +74,13 @@ public class PersistentData {
         }
     }
 
-    public void deleteData() {
+    public void deleteTask(String title) {
 
         // make a connection to DB
-        try ( Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/lab", "app", "app")) {
+        try {
             Statement statement = con.createStatement();
             // Usuwamy dane z tabeli
-            int numberOfDeletedRows = statement.executeUpdate("DELETE FROM Dane WHERE nazwisko = 'Mickiewicz'");
+            int numberOfDeletedRows = statement.executeUpdate("DELETE FROM tasks WHERE title = '" + title + "'");
             System.out.println("Data removed: " + numberOfDeletedRows + " rows");
         } catch (SQLException sqle) {
             System.err.println(sqle.getMessage());
@@ -86,7 +89,7 @@ public class PersistentData {
 
     public void insertTask(String title, String description, String tableName) {
         // make a connection to DB
-        try ( Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/lab", "app", "app")) {
+        try {
             PreparedStatement pstm;
             ResultSet rs;
             String query = "insert into tasks (title, description) values (?,?)";
@@ -95,40 +98,37 @@ public class PersistentData {
             pstm.setString(2, description);
             pstm.executeUpdate();
             rs = pstm.getGeneratedKeys();
-            if(rs !=null && rs.next())
-            {
+            if (rs != null && rs.next()) {
                 PreparedStatement pstmToDo;
-                String queryToDo = "insert into "+tableName+" (task_id) values (?)";
+                String queryToDo = "insert into " + tableName + " (task_id) values (?)";
                 pstmToDo = con.prepareStatement(queryToDo);
                 pstmToDo.setInt(1, rs.getInt(1));
-                pstmToDo.executeUpdate();   
+                pstmToDo.executeUpdate();
             }
-            
-            
+
             System.out.println("Data inserted");
         } catch (SQLException sqle) {
             System.err.println(sqle.getMessage());
         }
     }
 
-    public void selectData() {
+    public List<Task> selectTasks(String tableName) {
 
+        List<Task> tasks = new ArrayList<Task>(0);;
         // make a connection to DB
-        try ( Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/lab", "app", "app")) {
+        try {
             Statement statement = con.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT * FROM TASKS");
-            // Przeglądamy otrzymane wyniki
-            System.out.printf("|%-3s|%-12s|%-10s|\n", "ID", "taskName", "taskContent");
-            System.out.println("-----------------------------------");
+            ResultSet rs = statement.executeQuery("Select * from tasks where tasks.ID IN (Select " + tableName + ".Task_ID from " + tableName + ")");
             while (rs.next()) {
-                System.out.printf("|%-3s", rs.getInt("id"));
-                System.out.printf("|%-12s", rs.getString("taskName"));
-                System.out.printf("|%-10s", rs.getString("taskContent"));
+                Task tempTask = new Task(rs.getString("title"), rs.getString("description"));
+                tasks.add(tempTask);
             }
-            System.out.println("-----------------------------------");
+            System.out.println("Selected " + tasks.size() + " rows");
             rs.close();
         } catch (SQLException sqle) {
             System.err.println(sqle.getMessage());
         }
+
+        return tasks;
     }
 }

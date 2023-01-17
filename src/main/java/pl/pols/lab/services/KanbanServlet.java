@@ -12,8 +12,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import pl.polsl.lab.model.board.Column;
-import pl.polsl.lab.model.board.Task;
-
 /**
  *
  * @author Bartłomiej Gordon - bartgor628@student.polsl.pl
@@ -41,19 +39,19 @@ public class KanbanServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         if (_columnID.equals("toDo")) {
             if (!PersistentData.getInstance().inProgress.contains(_taskName) && !PersistentData.getInstance().done.contains(_taskName) && !PersistentData.getInstance().toDo.contains(_taskName)) {
-                PersistentData.getInstance().toDo.addTask(new Task(_taskName, _taskContent));
+                PersistentData.getInstance().toDo.addTask(_taskName, _taskContent);
             }
             printTasks(out, PersistentData.getInstance().toDo);
 
         } else if (_columnID.equals("inProgress")) {
             if (!PersistentData.getInstance().inProgress.contains(_taskName) && !PersistentData.getInstance().done.contains(_taskName) && !PersistentData.getInstance().toDo.contains(_taskName)) {
-                PersistentData.getInstance().inProgress.addTask(new Task(_taskName, _taskContent));
+                PersistentData.getInstance().inProgress.addTask(_taskName, _taskContent);
             }
             printTasks(out, PersistentData.getInstance().inProgress);
 
         } else if (_columnID.equals("done")) {
             if (!PersistentData.getInstance().inProgress.contains(_taskName) && !PersistentData.getInstance().done.contains(_taskName) && !PersistentData.getInstance().toDo.contains(_taskName)) {
-                PersistentData.getInstance().done.addTask(new Task(_taskName, _taskContent));
+                PersistentData.getInstance().done.addTask(_taskName, _taskContent);
             }
             printTasks(out, PersistentData.getInstance().done);
         } else {
@@ -98,8 +96,6 @@ public class KanbanServlet extends HttpServlet {
         } else {
 
             if (!PersistentData.getInstance().toDo.contains(_taskName) && !PersistentData.getInstance().inProgress.contains(_taskName) && !PersistentData.getInstance().done.contains(_taskName)) {
-                Task task = new Task(_taskName, _taskContent);
-                PersistentData.getInstance().toDo.addTask(task);
                 PersistentData.getInstance().insertTask(_taskName, _taskContent, "toDo");
                 try {
                     printTasks(out, PersistentData.getInstance().toDo);
@@ -114,7 +110,6 @@ public class KanbanServlet extends HttpServlet {
             }
 
         }
-
     }
 
     void printTasks(PrintWriter out, Column column) {

@@ -34,7 +34,7 @@ public class Column {
 
     public Boolean contains(String taskName)
     {
-        for(var task : tasks)
+        for(var task : getTasks())
         {
             if(taskName.equals(task.getTaskName()))
             {
@@ -54,13 +54,8 @@ public class Column {
     }
     
     public void removeTask(String taskName) {
-        for(var task : tasks)
-        {
-            if(taskName.equals(task.getTaskName()))
-            {
-                removeTask(task);
-            }
-        }
+       PersistentData.getInstance().deleteTask(taskName);
+
     }
 
     /**
@@ -100,7 +95,7 @@ public class Column {
      * @return List of tasks.
      */
     public List<Task> getTasks() {
-        return tasks;
+        return PersistentData.getInstance().selectTasks(columnName);
     }
 
 }
