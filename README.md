@@ -1,6 +1,6 @@
 ### Kanban Board implementation in Java
 ## Bartłomiej Gordon INF sem 5
-⭐ Do not forget to give a star on GitHub!
+`⭐ Do not forget to give a star on GitHub!`
 
 The main topic of the project was to create a Java backend for Kanban Board that can be used in a web browser. 
 
